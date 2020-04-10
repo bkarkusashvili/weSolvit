@@ -17,11 +17,11 @@ class CreateApplicationsTable extends Migration
             $table->id();
             $table->integer('status')->default(0);
             $table->integer('priority')->nullable();
-            $table->string('category_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('company');
-            $table->string('user_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->integer('identity');
             $table->integer('employes');
             $table->string('email');
