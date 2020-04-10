@@ -37989,7 +37989,11 @@ module.exports = function(module) {
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require('./components/Example');
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // React
+// require('./components/Example');
+
+
+__webpack_require__(/*! ./components/StatusSelect */ "./resources/js/components/StatusSelect.js");
 
 /***/ }),
 
@@ -38026,6 +38030,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 __webpack_require__(/*! material-components-web */ "./node_modules/material-components-web/index.js");
 
 __webpack_require__(/*! ./material */ "./resources/js/material.js");
+
+/***/ }),
+
+/***/ "./resources/js/components/StatusSelect.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/StatusSelect.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

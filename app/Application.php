@@ -42,10 +42,10 @@ class Application extends Model
     public function getStatus()
     {
         return [
-            0 => ['Open', 'danger'],
+            0 => ['Open', 'info'],
             1 => ['In Progress', 'progress'],
-            2 => ['Resolved', 'warning'],
-            3 => ['Close', 'success'],
+            2 => ['Solved', 'success'],
+            3 => ['Closed', 'danger'],
         ];
     }
 

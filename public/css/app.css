@@ -16998,7 +16998,7 @@ input[type=password].form-control.invalid,
 input[type=email].form-control.invalid,
 textarea.form-control.invalid,
 select.form-control.invalid {
-  border-color: rgba(239, 56, 38, 0.8);
+  border-color: rgba(243, 99, 99, 0.8);
 }
 
 textarea {
@@ -17100,7 +17100,7 @@ form .form-group:last-of-type {
 }
 
 .alert.alert-danger {
-  color: #EF3826;
+  color: #F36363;
 }
 
 #list {
@@ -17198,12 +17198,12 @@ form .form-group:last-of-type {
 }
 
 #list .action button {
-  color: #EF3826;
+  color: #F36363;
 }
 
 #list .action button:hover {
   color: #FFFFFF;
-  background-color: #EF3826;
+  background-color: #F36363;
 }
 
 #list .action a.left,
@@ -17389,28 +17389,23 @@ form .form-group:last-of-type {
 }
 
 .success {
-  color: #00B69B;
-  background-color: rgba(0, 182, 155, 0.2);
+  color: #2AD577;
+  background-color: rgba(42, 213, 119, 0.2);
 }
 
 .progress {
-  color: #6226EF;
-  background-color: rgba(98, 38, 239, 0.2);
-}
-
-.warning {
-  color: #FFA756;
-  background-color: rgba(255, 167, 86, 0.2);
+  color: #FF9235;
+  background-color: rgba(255, 146, 53, 0.2);
 }
 
 .danger {
-  color: #EF3826;
-  background-color: rgba(239, 56, 38, 0.2);
+  color: #F36363;
+  background-color: rgba(243, 99, 99, 0.2);
 }
 
 .info {
-  color: #BA29FF;
-  background-color: rgba(186, 41, 255, 0.2);
+  color: #006FFF;
+  background-color: rgba(0, 111, 255, 0.2);
 }
 
 .col-6 {

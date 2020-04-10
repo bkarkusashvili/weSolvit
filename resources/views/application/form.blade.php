@@ -106,6 +106,7 @@
         <div class="form-block">
             <div class="form-group d-info">
                 <label>სტატუსი</label>
+                <div id="status-select"></div>
                 {!! $item->statusHtml !!}
             </div>
             <div class="form-group d-info">
