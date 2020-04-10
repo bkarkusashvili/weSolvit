@@ -1,0 +1,175 @@
+#app {
+    display: flex;
+    min-height: 100vh;
+    height: auto;
+    background-color: $bg;
+
+    & > aside {
+        min-width: 240px;
+        width: auto;
+        min-height: 100vh;
+        height: auto;
+        background-color: $white;
+
+        .fixed {
+            position: fixed;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            height: 70px;
+            font-size: 20px;
+            justify-content: center;
+            font-weight: bold;
+
+            strong {
+                color: $primary;
+                margin-right: 5px;
+            }
+        }
+
+        ul {
+
+            li {
+                display: flex;
+                align-items: center;
+                height: 50px;
+                padding-right: 20px;
+
+                &::before {
+                    content: '';
+                    width: 9px;
+                    height: 100%;
+                    background-color: transparent;
+                    border-radius: 4px;
+                    margin-left: -2px;
+                }
+
+                a {
+                    width: 100%;
+                    color: #202224;
+                    text-decoration: none;
+                    font-size: 14px;
+                    border-radius: 6px;
+                    padding: 15px 25px;
+                    margin-left: 25px;
+
+                    i {
+                        margin-right: 15px;
+                    }
+                }
+
+                &.active {
+
+                    &::before {
+                        background-color: $primary;
+                    }
+
+                    a {
+                        color: $white;
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        flex: 1;
+
+        & > header {
+            width: 100%;
+            background-color: $white;
+            height: 70px;
+        }
+    
+        & > main {
+            padding: 30px;
+    
+            .head {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 2px solid rgba(#212121, .07);
+
+                h1 {
+                    font-size: 24px;
+                }
+
+                a {
+                    font-weight: 600;
+                    padding: 15px 20px 12px;
+                    font-size: 15px;
+
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.mb-5 {
+    margin-bottom: 15px;
+}
+
+.success {
+    color: $success;
+    background-color: rgba($success, .2);
+}
+
+.progress {
+    color: $progress;
+    background-color: rgba($progress, .2);
+}
+
+.warning {
+    color: $warning;
+    background-color: rgba($warning, .2);
+}
+
+.danger {
+    color: $danger;
+    background-color: rgba($danger, .2);
+}
+
+.info {
+    color: $info;
+    background-color: rgba($info, .2);
+}
+
+.col-6 {
+    width: 48% !important;
+}
+
+span.status {
+    font-weight: bold;
+    padding: 3px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 30px;
+}
+
+span.priority {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.d-info {
+    align-items: center;
+
+    label {
+        font-weight: bold;
+    }
+}

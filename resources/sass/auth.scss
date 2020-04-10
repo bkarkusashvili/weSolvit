@@ -1,0 +1,35 @@
+@import './variables';
+
+#auth {
+    min-height: 100vh;
+    height: auto;
+    background: $primary;
+    background-image: url(../assets/svg/bg.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .block {
+        border-radius: 25px;
+        background-color: white;
+        padding: 50px;                      
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            font-weight: bold;
+            color: #202224;
+            margin-bottom: 20px;
+        }
+
+        h6 {
+            color: rgba(#202224, .8);
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+    }
+}

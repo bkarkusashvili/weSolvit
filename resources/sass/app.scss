@@ -1,0 +1,27 @@
+// Main
+@import 'reset';
+
+// Fonts
+@import url("//cdn.web-fonts.ge/fonts/bpg-glaho/css/bpg-glaho.min.css");
+@import url("//cdn.web-fonts.ge/fonts/bpg-nino-mtavruli/css/bpg-nino-mtavruli.min.css");
+@import '~@fortawesome/fontawesome-free/css/all';
+
+// Packages
+@import '~select2/dist/css/select2';
+@import '~material-components-web/dist/material-components-web.css';
+
+// Variables
+@import 'variables';
+
+// Componenets
+@import 'components/index';
+@import 'main';
+@import 'auth';
+
+* {
+    font-family: $mainFont;
+}
+
+.caps {
+    font-family: $mainFontCaps;
+}

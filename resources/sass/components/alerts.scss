@@ -1,0 +1,7 @@
+.alert {
+    font-size: 13px;
+
+    &.alert-danger {
+        color: $danger;
+    }
+}
