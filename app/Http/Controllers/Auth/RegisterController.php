@@ -49,11 +49,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        if ($data['role'] === 'company') {
+            return $this->validateCompany($data);
+        } elseif ($data['role'] === 'freelance') {
+            return $this->validateFreelance($data);
+        }
+
+        return redirect()->back();
     }
 
     /**
@@ -64,10 +66,42 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        dd($data);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+        ]);
+    }
+
+    private function validateCompany(array $data)
+    {
+        return Validator::make($data, [
+            'company_name' => 'required|string|max:255',
+            'identity' => 'required|integer|min:10000|max:99999',
+            'employes' => 'required|integer|min:0',
+            'working_hours' => 'required|string|max:255',
+            'image' => 'required|image|max:2048',
+            'message' => 'required|string',
+            'phone' => 'required',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+    }
+    
+    private function validateFreelance(array $data)
+    {
+        return Validator::make($data, [
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'working_hours' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'cv' => 'required|file|max:2048',
+            'message' => 'required|string',
+            'ref' => 'required',
+            'phone' => 'required',
+            'password' => 'required|string|min:8|confirmed',
         ]);
     }
 }

@@ -23,7 +23,10 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.13.0",
+        "bootstrap": "^4.4.1",
+        "jquery": "^3.5.0",
         "material-components-web": "^5.1.0",
+        "popper.js": "^1.16.1",
         "select2": "^4.0.13"
     }
 }

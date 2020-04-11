@@ -114,14 +114,6 @@
 
 }
 
-.w-100 {
-    width: 100% !important;
-}
-
-.mb-5 {
-    margin-bottom: 15px;
-}
-
 .success {
     color: $success;
     background-color: rgba($success, .2);
@@ -140,10 +132,6 @@
 .info {
     color: $info;
     background-color: rgba($info, .2);
-}
-
-.col-6 {
-    width: 48% !important;
 }
 
 span.status {
@@ -167,4 +155,16 @@ span.priority {
     label {
         font-weight: bold;
     }
+}
+
+.text-red {
+    color: #E65571;   
+}
+
+.text-yellow {
+    color: #FF8A74;   
+}
+
+.text-green {
+    color: #00E089;   
 }

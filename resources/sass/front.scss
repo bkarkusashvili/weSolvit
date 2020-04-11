@@ -1,0 +1,234 @@
+#front-header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    .logo {
+        width: 130px;
+    }
+
+    .navbar {
+        height: 80px;
+        background-color: $white;
+        box-shadow: 0 10px 30px rgba($menuColor, .1);
+
+        nav {
+
+            a.menu-item {
+                color: $menuColor;
+                font-size: 13px;
+                text-decoration: none;
+                margin-right: 25px;
+                font-family: $mainFontCaps;
+            }
+        }
+    }
+
+    .stat {
+        display: flex;
+        height: 55px;
+        background-color: #F2F4F8;
+        box-shadow: 0 10px 20px rgba($menuColor, .1);
+        justify-content: center;
+        align-items: center;
+
+        .stat-item {
+            color: $menuColor;
+            font-size: 15px;
+            margin: 0 25px;
+
+            span {
+                font-size: 20px;
+                margin-right: 7px;
+                font-family: $mainFontCaps;
+                -webkit-text-stroke: 1px;
+            }
+        }
+    }
+}
+
+#front {
+    z-index: 5;
+    padding-top: 135px;
+    position: relative;
+    background-image: url(../images/cover.png), url(../images/front-bg.jpg);
+    background-blend-mode: multiply, normal;
+    background-repeat: repeat, no-repeat;
+    background-size: 100% auto;
+    background-position: top 30px center;
+    min-height: 100vh;
+    height: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 6px rgba(#000000, .16);
+
+    .front-top-part {
+        margin-top: 50px;
+        z-index: 10;
+        justify-content: center;
+
+        .front-top-part-info {
+            color: $white;
+
+            h1 {
+                font-size: 28px;
+                font-family: $mainFontCaps;
+                margin-bottom: 15px;
+
+                &::before {
+                    content: '';
+                    display: flex;
+                    width: 70px;
+                    height: 10px;
+                    margin-bottom: 25px;
+                    background-color: #669CFF;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                overflow: hidden;
+                height: 19px;
+                margin-bottom: 20px;
+            }
+
+            ul {
+
+                li {
+                    display: flex;
+                    font-size: 16px;
+                    
+                    div {
+                        margin-right: 15px;
+                        display: flex;
+                        flex-direction: column;
+
+                        i.circle {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+                            width: 30px;
+                            height: 30px;
+                            border: 1px solid rgba($white, .5);
+
+                            &::before {
+                                content: '';
+                                width: 20px;
+                                height: 20px;
+                                background-color: rgba($white, .1);
+                                border-radius: 50%;
+                                border: 1px solid $white;
+                            }
+                        }
+    
+                        i.line {
+                            flex: 1;
+                            width: 1px;
+                            background-color: $white;
+                            margin-left: 15px;
+                        }
+                    }
+
+                    span {
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+        }
+
+        .front-ticket {
+
+            label {
+
+            }
+        }
+    }
+
+    .front-partner {
+        z-index: 20;
+        background-color: $white;
+        margin-top: 48px;
+        padding: 60px 0 50px;
+        display: flex;
+        box-shadow: 0 100px 99px rgba(#A6AECE, .3);
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            h3 {
+                font-family: $mainFontCaps;
+                font-size: 25px;
+                color: $menuColor;
+                -webkit-text-stroke: 1px;
+                margin-bottom: 30px;
+            }
+    
+            .list {
+                width: 100%;
+                margin-bottom: 40px;
+
+                div {
+                    
+                    .wrap {
+                        background-color: #F8F9FB;
+                        border-radius: 6px;
+                        border: 1px solid transparent;
+                        transition: all 0.2s;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 55px;
+                        width: 100%;
+
+                        &:hover {
+                            background-color: $white;
+                            border-color: #DEE2EA;
+                        }
+
+                        img {
+                            max-width: 100px;
+                            max-height: 30px;
+                            height: auto;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+
+            p {
+                width: 70%;
+                text-align: center;
+                font-size: 15px;
+                color: rgba($menuColor, .8);
+                line-height: 30px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .front-stats {
+        background-color: #F2F3F7;
+        display: flex;
+        justify-content: center;
+        padding: 70px 0;
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            margin: 0 80px;
+            color: $menuColor;
+            font-size: 15px;
+            max-width: 215px;
+            font-family: $mainFontCaps;
+
+            span {
+                font-size: 50px;
+                -webkit-text-stroke: 3px;
+            }
+        }
+    }
+}

@@ -32,6 +32,8 @@ $factory->define(User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'phone'=> $faker->phoneNumber,
         'ref' => $role == 'freelance' ? $faker->phoneNumber : null,
+        'image' => $role == 'freelance' ? null : $faker->imageUrl(),
+        'cv' => $role == 'freelance' ? $faker->streetName : null,
         'role' => $role,
         'message' => $faker->paragraph(15),
         'status' => $faker->numberBetween(0, 1),

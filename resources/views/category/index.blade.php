@@ -8,7 +8,7 @@
 @section('content')
 <div class="head">
     <h1>{{ $title }}</h1>
-    <a class="btn" href="{{ route($page.'.create') }}">ახლის დამატება</a>
+    <a class="btn btn-primary" href="{{ route($page.'.create') }}">ახლის დამატება</a>
 </div>
 
 <table id="list">

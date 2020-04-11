@@ -1,0 +1,113 @@
+$weBlue: #005AFF;
+
+.we-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px;
+    color: $white;
+    height: 45px;
+    background-color: $weBlue;
+    opacity: .8;
+    font-size: 14px;
+    font-family: $mainFontCaps;
+    text-decoration: none;
+    transition: opacity .2s;
+    outline: none;
+    border: none;
+
+    i, span {
+        transition: transform .2s;
+    }
+
+    &.we-arr-left {
+        
+        i {
+            margin-right: 25px;
+        }
+    }
+
+    &.we-arr-right {
+        
+        i {
+            margin-left: 25px;
+        }
+    }
+
+    &:hover:not([disabled]) {
+        opacity: 1;
+        color: $white;
+        text-decoration: none;
+
+        &.we-arr-left {
+        
+            i {
+                transform: translateX(8px);
+            }
+
+            span {
+                transform: translateX(-7px);
+            }
+        }
+    
+        &.we-arr-right {
+            
+            i {
+                transform: translateX(-8px);
+            }
+
+            span {
+                transform: translateX(7px);
+            }
+        }
+    }
+
+    &:disabled {
+        opacity: .6;
+    }
+}
+
+.we-block {
+    background-color: $white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 50px 50px rgba($menuColor, .2);
+}
+
+.we-group {
+
+    label {
+        font-family: $mainFontCaps;
+        color: $menuColor;
+        font-size: 15px;
+        margin-bottom: 15px;
+        -webkit-text-stroke: 1px black;
+    }
+
+    textarea {
+        position: relative;
+        background-color: #F1F3FB;
+        background-image: url(../../svg/dots.svg);
+        background-repeat: no-repeat;
+        background-position: bottom 8px right 8px;
+        border: 1px solid #D3D7E4;
+        width: 100%;
+        min-height: auto;
+        height: 150px;
+        resize: none;
+        font-size: 14px;
+        border-radius: 10px;
+        outline: none;
+        padding: 15px 20px;
+
+        &:focus {
+            border-color: #005AFF;
+        }
+    }
+}
+
+.we-alert {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #7581B1;
+}
