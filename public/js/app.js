@@ -56040,6 +56040,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // React
 
 __webpack_require__(/*! ./components/StatusSelect */ "./resources/js/components/StatusSelect.js");
 
+__webpack_require__(/*! ./front */ "./resources/js/front.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -56092,6 +56094,37 @@ __webpack_require__(/*! ./material */ "./resources/js/material.js");
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./resources/js/front.js":
+/*!*******************************!*\
+  !*** ./resources/js/front.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$('.front-faq').on('click', '.item', function (e) {
+  var animateSpeed = 200;
+  var current = $(e.target).parents('.item').first();
+  var p = current.children('p');
+
+  if (current.hasClass('active')) {
+    current.removeClass('active');
+    p.animate({
+      height: 0
+    }, animateSpeed);
+  } else {
+    $('.front-faq .item.active p').animate({
+      height: 0
+    }, animateSpeed);
+    $('.front-faq .item.active').removeClass('active');
+    p.animate({
+      height: p.get(0).scrollHeight + 30
+    }, animateSpeed);
+    current.addClass('active');
+  }
+});
 
 /***/ }),
 

@@ -36,4 +36,23 @@
     <main id="front">
         @yield('content')
     </main>
+    <footer id="front-footer">
+        <div class="contaner">
+            <div class="row">
+                <div class="col-4 social">
+                    <a href="" class="linkdin"></a>
+                    <a href="" class="facebook"></a>
+                </div>
+                <div class="col-4 copyright">
+                    WESOLVIT ოფიციალური ვებგვერდი © 2020 ყველა უფლება დაცულია
+                </div>
+                <div class="col-4 support">
+                    <span>Supported by</span>
+                    <a href="">
+                        <img src="images/foot-solvit.png" alt="SOLVIT">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 @endsection

@@ -9,3 +9,4 @@ require('./bootstrap');
 // React
 // require('./components/Example');
 require('./components/StatusSelect');
+require('./front');

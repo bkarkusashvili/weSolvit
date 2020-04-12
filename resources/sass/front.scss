@@ -404,40 +404,72 @@
             margin-bottom: 30px;
         }
 
-        .item {
-            background-color: #F8F9FB;
+        .list {
             display: flex;
-            flex-direction: column;
-            border-radius: 5px;
-            padding: 20px;
-            color: $menuColor;
-            box-shadow: 0 12px 24px rgba(#284469, .1);
-            margin-bottom: 16px;
-            transition: all .2s;
 
-            .item-head {
+            .item {
                 cursor: pointer;
+                background-color: #F8F9FB;
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
+                border-radius: 5px;
+                color: $menuColor;
+                box-shadow: 0 12px 24px rgba(#284469, .1);
+                margin-bottom: 16px;
+                border: 1px solid transparent;
+                transition: all .3s;
+    
+                .item-head {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 20px 20px 10px;
+                    align-items: center;
+    
+                    h4 {
+                        font-size: 16px;
+                        font-family: $mainFontCaps;
+                        -webkit-text-stroke: .5px;
+                    }
 
-                h4 {
-                    font-size: 16px;
-                    font-family: $mainFontCaps;
-                    -webkit-text-stroke: .5px;
+                    i {
+                        transform: translateY(-4px);
+                        transition: transform .2s;
+                    }
                 }
-            }
+    
+                p {
+                    padding: 0 20px;
+                    height: 0;
+                    font-size: 14px;
+                    line-height: 18px;
+                    margin: 0;
+                    overflow: hidden;
+                }
+    
+                &:not(.active):hover {
+                    background-color: #005AFF;
+                    color: $white;
+                }
+    
+                &.active {
+    
+                    &:hover {
+                        background-color: #FFFFFF;
+                        border: 1px solid #DEE2EA;
 
-            p {
-                height: 0;
-                font-size: 14px;
-                line-height: 18px;
-                margin: 0;
-                overflow: hidden;
-            }
+                    }
 
-            &:hover {
-                background-color: #005AFF;
-                color: $white;
+                    .item-head {
+
+                        i {
+                            transform: translateY(-4px) rotateZ(180deg);
+                        }
+                    }
+
+                    p {
+                        padding: 0 20px;
+                    }
+                }
             }
         }
     }

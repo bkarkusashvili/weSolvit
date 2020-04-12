@@ -188,10 +188,10 @@
     </section>
     <section class="front-faq container-fluid">
         <div class="container">
-            <div class="row">
+            <div class="row list">
                 <h3 class="col-12 text-center">ხშირად დასმული კითხვები</h3>
-                @for ($i = 0; $i < 6; $i++)
                 <div class="col-6">
+                    @for ($i = 0; $i < 6; $i = $i + 2)
                     <div class="item">
                         <div class="item-head">
                             <h4>{{ __("faq.$i.title") }}</h4>
@@ -199,8 +199,19 @@
                         </div>
                         <p>{{ __("faq.$i.text") }}</p>
                     </div>
+                    @endfor
                 </div>
-                @endfor
+                <div class="col-6">
+                    @for ($i = 1; $i < 6; $i = $i + 2)
+                    <div class="item">
+                        <div class="item-head">
+                            <h4>{{ __("faq.$i.title") }}</h4>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <p>{{ __("faq.$i.text") }}</p>
+                    </div>
+                    @endfor
+                </div>
             </div>
         </div>  
     </section>

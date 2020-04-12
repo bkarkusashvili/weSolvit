@@ -28217,31 +28217,43 @@ span.priority {
   margin-bottom: 30px;
 }
 
-#front .front-faq .item {
+#front .front-faq .list {
+  display: flex;
+}
+
+#front .front-faq .list .item {
+  cursor: pointer;
   background-color: #F8F9FB;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  padding: 20px;
   color: #284469;
   box-shadow: 0 12px 24px rgba(40, 68, 105, 0.1);
   margin-bottom: 16px;
-  transition: all 0.2s;
+  border: 1px solid transparent;
+  transition: all 0.3s;
 }
 
-#front .front-faq .item .item-head {
-  cursor: pointer;
+#front .front-faq .list .item .item-head {
   display: flex;
   justify-content: space-between;
+  padding: 20px 20px 10px;
+  align-items: center;
 }
 
-#front .front-faq .item .item-head h4 {
+#front .front-faq .list .item .item-head h4 {
   font-size: 16px;
   font-family: "BGP Caps", sans-serif;
   -webkit-text-stroke: 0.5px;
 }
 
-#front .front-faq .item p {
+#front .front-faq .list .item .item-head i {
+  transform: translateY(-4px);
+  transition: transform 0.2s;
+}
+
+#front .front-faq .list .item p {
+  padding: 0 20px;
   height: 0;
   font-size: 14px;
   line-height: 18px;
@@ -28249,9 +28261,22 @@ span.priority {
   overflow: hidden;
 }
 
-#front .front-faq .item:hover {
+#front .front-faq .list .item:not(.active):hover {
   background-color: #005AFF;
   color: #FFFFFF;
+}
+
+#front .front-faq .list .item.active:hover {
+  background-color: #FFFFFF;
+  border: 1px solid #DEE2EA;
+}
+
+#front .front-faq .list .item.active .item-head i {
+  transform: translateY(-4px) rotateZ(180deg);
+}
+
+#front .front-faq .list .item.active p {
+  padding: 0 20px;
 }
 
 * {
