@@ -28047,8 +28047,217 @@ span.priority {
   -webkit-text-stroke: 3px;
 }
 
+#front .front-solved {
+  background-color: #FFFFFF;
+  padding: 60px 0;
+}
+
+#front .front-solved h3 {
+  font-family: "BGP Caps", sans-serif;
+  font-size: 25px;
+  color: #284469;
+  -webkit-text-stroke: 1px;
+  margin-bottom: 30px;
+}
+
+#front .front-solved .item {
+  position: relative;
+  background-color: #F8F9FB;
+  padding: 30px;
+  padding-left: 100px;
+  margin-bottom: 70px;
+}
+
+#front .front-solved .item h4 {
+  font-family: "BGP Caps", sans-serif;
+  font-size: 18px;
+  color: #284469;
+  -webkit-text-stroke: 0.5px;
+  margin-bottom: 15px;
+}
+
+#front .front-solved .item p {
+  color: rgba(40, 68, 105, 0.8);
+  font-size: 14px;
+}
+
+#front .front-solved .item > span {
+  display: block;
+  color: #284469;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#front .front-solved .item > span strong {
+  color: #00E089;
+}
+
+#front .front-solved .item a {
+  text-decoration: none;
+  color: #005AFF;
+}
+
+#front .front-solved .item .solved-more {
+  display: inline-block;
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+
+#front .front-solved .item .solved-more i {
+  margin-left: 10px;
+  transform: translateY(2px);
+  transition: transform 0.3s;
+}
+
+#front .front-solved .item .company {
+  position: absolute;
+  right: 40px;
+  bottom: -30px;
+  border: 3px solid #00E089;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+#front .front-solved .item .company figure {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background-color: #f1f3f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  transition: all 0.3s;
+}
+
+#front .front-solved .item .company figure img {
+  max-width: 70px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+}
+
+#front .front-solved .item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: #00E089;
+  width: 20px;
+  height: 100%;
+  transition: width 0.3s;
+}
+
+#front .front-solved .item::after {
+  content: "\F00C";
+  font-family: "Font Awesome 5 Free";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-15px);
+  opacity: 0;
+  border-radius: 50%;
+  background-color: #12F19A;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+#front .front-solved .item:hover::before {
+  width: 60px;
+}
+
+#front .front-solved .item:hover::after {
+  opacity: 1;
+  left: 15px;
+}
+
+#front .front-solved .item:hover .solved-more {
+  transform: translateX(15px);
+}
+
+#front .front-solved .item:hover .solved-more i {
+  transform: translateY(2px) rotateZ(-45deg);
+}
+
+#front .front-solved .item:hover .company {
+  width: 90px;
+  height: 90px;
+  border-width: 1px;
+  right: 45px;
+  bottom: -25px;
+}
+
+#front .front-solved .item:hover .company figure {
+  width: 80px;
+  height: 80px;
+}
+
+#front .front-faq {
+  background-color: #F2F3F7;
+  padding: 150px 0 200px;
+}
+
+#front .front-faq h3 {
+  font-family: "BGP Caps", sans-serif;
+  font-size: 25px;
+  color: #284469;
+  -webkit-text-stroke: 1px;
+  margin-bottom: 30px;
+}
+
+#front .front-faq .item {
+  background-color: #F8F9FB;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 20px;
+  color: #284469;
+  box-shadow: 0 12px 24px rgba(40, 68, 105, 0.1);
+  margin-bottom: 16px;
+  transition: all 0.2s;
+}
+
+#front .front-faq .item .item-head {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+#front .front-faq .item .item-head h4 {
+  font-size: 16px;
+  font-family: "BGP Caps", sans-serif;
+  -webkit-text-stroke: 0.5px;
+}
+
+#front .front-faq .item p {
+  height: 0;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  overflow: hidden;
+}
+
+#front .front-faq .item:hover {
+  background-color: #005AFF;
+  color: #FFFFFF;
+}
+
 * {
   font-family: "BGP Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,

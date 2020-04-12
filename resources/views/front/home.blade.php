@@ -105,4 +105,109 @@
             გადაჭრილი პრობლემა
         </div>
     </section>
+    <section class="front-solved container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 offset-1">
+                    <div class="row">
+                        <h3 class="col-12">მოგვარებული პრობლემები</h3>
+                        <div class="col-6">
+                            <div class="item">
+                                <h4>პრობლემის დასახელება</h4>
+                                <p>
+                                    თუ გაქვთ ვინმეს გამოცდილება გთხოვთ გამიწიოთ კონსულტაცია ქლაუდ ტრანსფორმაციის-მიგრაციის საკითხში. წინასწარ გიხდით მადლობას დახმარებისთვის...
+                                </p>
+                                <span>მოაგვარა <strong>SOLVIT</strong>-მა</span>
+                                <a href="" class="solved-more">
+                                    ვრცლად ნახვა
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <div class="company">
+                                    <figure>
+                                        <img src="images/solvit.png" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <h4>პრობლემის დასახელება</h4>
+                                <p>
+                                    თუ გაქვთ ვინმეს გამოცდილება გთხოვთ გამიწიოთ კონსულტაცია ქლაუდ ტრანსფორმაციის-მიგრაციის საკითხში. წინასწარ გიხდით მადლობას დახმარებისთვის...
+                                </p>
+                                <span>მოაგვარა <strong>SOLVIT</strong>-მა</span>
+                                <a href="" class="solved-more">
+                                    ვრცლად ნახვა
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <div class="company">
+                                    <figure>
+                                        <img src="images/solvit.png" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <h4>პრობლემის დასახელება</h4>
+                                <p>
+                                    თუ გაქვთ ვინმეს გამოცდილება გთხოვთ გამიწიოთ კონსულტაცია ქლაუდ ტრანსფორმაციის-მიგრაციის საკითხში. წინასწარ გიხდით მადლობას დახმარებისთვის...
+                                </p>
+                                <span>მოაგვარა <strong>SOLVIT</strong>-მა</span>
+                                <a href="" class="solved-more">
+                                    ვრცლად ნახვა
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <div class="company">
+                                    <figure>
+                                        <img src="images/solvit.png" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                <h4>პრობლემის დასახელება</h4>
+                                <p>
+                                    თუ გაქვთ ვინმეს გამოცდილება გთხოვთ გამიწიოთ კონსულტაცია ქლაუდ ტრანსფორმაციის-მიგრაციის საკითხში. წინასწარ გიხდით მადლობას დახმარებისთვის...
+                                </p>
+                                <span>მოაგვარა <strong>SOLVIT</strong>-მა</span>
+                                <a href="" class="solved-more">
+                                    ვრცლად ნახვა
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <div class="company">
+                                    <figure>
+                                        <img src="images/solvit.png" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="front-faq container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 offset-1">
+                    <div class="row">
+                        <h3 class="col-12 text-center">ხშირად დასმული კითხვები</h3>
+                        @for ($i = 0; $i < 6; $i++)
+                        <div class="col-6">
+                            <div class="item">
+                                <div class="item-head">
+                                    <h4>{{ __("faq.$i.title") }}</h4>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                                <p>{{ __("faq.$i.text") }}</p>
+                            </div>
+                        </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
 @endsection
