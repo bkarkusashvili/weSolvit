@@ -37,20 +37,22 @@
         @yield('content')
     </main>
     <footer id="front-footer">
-        <div class="contaner">
-            <div class="row">
-                <div class="col-4 social">
-                    <a href="" class="linkdin"></a>
-                    <a href="" class="facebook"></a>
-                </div>
-                <div class="col-4 copyright">
-                    WESOLVIT ოფიციალური ვებგვერდი © 2020 ყველა უფლება დაცულია
-                </div>
-                <div class="col-4 support">
-                    <span>Supported by</span>
-                    <a href="">
-                        <img src="images/foot-solvit.png" alt="SOLVIT">
-                    </a>
+        <div class="container">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-3 social">
+                        <a href="" class="linkdin"></a>
+                        <a href="" class="facebook"></a>
+                    </div>
+                    <div class="col-6 copyright">
+                        WESOLVIT ოფიციალური ვებგვერდი © 2020 ყველა უფლება დაცულია
+                    </div>
+                    <div class="col-3 support">
+                        <span>Supported by</span>
+                        <a href="">
+                            <img src="images/foot-solvit.png" alt="SOLVIT">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

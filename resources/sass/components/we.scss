@@ -81,7 +81,7 @@ $weBlue: #005AFF;
         color: $menuColor;
         font-size: 15px;
         margin-bottom: 15px;
-        -webkit-text-stroke: 1px black;
+        -webkit-text-stroke: 1px $menuColor;
     }
 
     textarea {
