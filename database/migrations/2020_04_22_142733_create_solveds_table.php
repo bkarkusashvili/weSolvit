@@ -19,7 +19,7 @@ class CreateSolvedsTable extends Migration
             $table->text('text_en');
             $table->text('comment_ge');
             $table->text('comment_en');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
     }
