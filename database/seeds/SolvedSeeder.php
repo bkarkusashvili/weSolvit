@@ -18,7 +18,7 @@ class SolvedSeeder extends Seeder
             'text_en' => '', 
             'comment_ge' => '', 
             'comment_en' => '', 
-            'user_id' => User::inRandomOrder()->first(), 
+            'user_id' => User::inRandomOrder()->first()->id, 
         ]);
         
         Solved::create([
@@ -26,7 +26,7 @@ class SolvedSeeder extends Seeder
             'text_en' => '', 
             'comment_ge' => '', 
             'comment_en' => '', 
-            'user_id' => User::inRandomOrder()->first(), 
+            'user_id' => User::inRandomOrder()->first()->id, 
         ]);
         
         Solved::create([
@@ -34,7 +34,7 @@ class SolvedSeeder extends Seeder
             'text_en' => '', 
             'comment_ge' => '', 
             'comment_en' => '', 
-            'user_id' => User::inRandomOrder()->first(), 
+            'user_id' => User::inRandomOrder()->first()->id, 
         ]);
 
         Solved::create([
@@ -42,7 +42,7 @@ class SolvedSeeder extends Seeder
             'text_en' => '', 
             'comment_ge' => '', 
             'comment_en' => '', 
-            'user_id' => User::inRandomOrder()->first(), 
+            'user_id' => User::inRandomOrder()->first()->id, 
         ]);
     }
 }
