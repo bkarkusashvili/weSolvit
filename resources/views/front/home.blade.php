@@ -3,8 +3,8 @@
 
 @section('content')
     <section class="front-top-part container">
-        <div class="row">
-            <div class="col-8 front-top-part-info">
+        <div class="row flex-column flex-md-row">
+            <div class="col-12 col-md-8 front-top-part-info">
                 <h1>ერთად გავუმკლავდეთ IT პრობლემებს</h1>
                 <p>
                     ჩვენ თანადგომას ვუცხადებთ ქვეყანაში მოქმედ ორგანიზაციებს და კომპანიებს. თუ გჭირდებათ რჩევა დისტანციურ მუშაობასთან, ინფორმაციულ ტექნოლოგიებთან, ან უსაფრთხოებასთან დაკავშირებით:
@@ -32,15 +32,15 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-4 front-ticket">
+            <div class="col-12 col-md-4 front-ticket">
                 <div class="we-block">
                     <div class="we-group mb-2">
                         <label>აღწერე შენი პრობლემა</label>
-                        <textarea name="" class="we-control" placeholder="პრობლემის აღწერა..."></textarea>
+                        <textarea class="we-control" placeholder="პრობლემის აღწერა..."></textarea>
                         <span class="we-alert we-hint">მაქსიმუმ 1000 სიმბოლო</span>
                     </div>
                     <div class="we-group d-flex justify-content-end">
-                        <button class="we-btn we-arr-right" disabled>
+                        <button class="we-btn we-arr-right" disabled data-toggle="modal" data-target="#ticket">
                             <span>გაგზავნა</span>
                             <i class="fas fa-arrow-right"></i>
                         </button>
@@ -55,32 +55,32 @@
             <div class="list row mx-2">
                 <div class="col-2 px-2">
                     <div class="wrap">
-                        <img src="images/solvit.png" alt="">
+                        <img src="{{ url('images/solvit.png') }}" alt="">
                     </div>
                 </div>
                 <div class="col-2 px-2">
                     <div class="wrap">
-                        <img src="images/solvit.png" alt="">
+                        <img src="{{ url('images/solvit.png' )}}" alt="">
                     </div>
                 </div>
                 <div class="col-2 px-2">
                     <div class="wrap">
-                        <img src="images/solvit.png" alt="">
+                        <img src="{{ url('images/solvit.png' )}}" alt="">
                     </div>
                 </div>
                 <div class="col-2 px-2">
                     <div class="wrap">
-                        <img src="images/solvit.png" alt="">
+                        <img src="{{ url('images/solvit.png' )}}" alt="">
                     </div>
                 </div>
                 <div class="col-2 px-2">
                     <div class="wrap">
-                        <img src="images/solvit.png" alt="">
+                        <img src="{{ url('images/solvit.png' )}}" alt="">
                     </div>
                 </div>
                 <div class="col-2 px-2">
                     <div class="wrap">
-                        <img src="images/solvit.png" alt="">
+                        <img src="{{ url('images/solvit.png' )}}" alt="">
                     </div>
                 </div>
             </div>
@@ -118,13 +118,13 @@
                             თუ გაქვთ ვინმეს გამოცდილება გთხოვთ გამიწიოთ კონსულტაცია ქლაუდ ტრანსფორმაციის-მიგრაციის საკითხში. წინასწარ გიხდით მადლობას დახმარებისთვის...
                         </p>
                         <span>მოაგვარა <strong>SOLVIT</strong>-მა</span>
-                        <a href="" class="solved-more">
+                        <a class="solved-more" data-toggle="modal" data-target="#solved">
                             ვრცლად ნახვა
                             <i class="fas fa-arrow-right"></i>
                         </a>
                         <div class="company">
                             <figure>
-                                <img src="images/solvit.png" alt="">
+                                <img src="{{ url('images/solvit.png') }}" alt="">
                             </figure>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                         </a>
                         <div class="company">
                             <figure>
-                                <img src="images/solvit.png" alt="">
+                                <img src="{{ url('images/solvit.png') }}" alt="">
                             </figure>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                         </a>
                         <div class="company">
                             <figure>
-                                <img src="images/solvit.png" alt="">
+                                <img src="{{ url('images/solvit.png') }}" alt="">
                             </figure>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                         </a>
                         <div class="company">
                             <figure>
-                                <img src="images/solvit.png" alt="">
+                                <img src="{{ url('images/solvit.png') }}" alt="">
                             </figure>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
             </div>
         </div>
     </section>
-    <section class="front-faq container-fluid">
+    <section class="front-faq container-fluid" id="faqs">
         <div class="container">
             <div class="row list">
                 <h3 class="col-12 text-center">ხშირად დასმული კითხვები</h3>
@@ -215,4 +215,9 @@
             </div>
         </div>  
     </section>
+@endsection
+
+@section('modal')
+    @include('modals.solved')
+    @include('modals.ticket')
 @endsection

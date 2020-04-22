@@ -14,7 +14,6 @@
 <table id="list">
     <thead>
         <tr>
-            <th>ID</th>
             <th>სახელი</th>
             <th>თარიღი</th>
             <th>მოქმედება</th>
@@ -23,7 +22,6 @@
     <tbody>
         @foreach ($list as $item)
             <tr>
-                <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->created_at->format('d.m.Y') }}</td>
                 <td class="action">

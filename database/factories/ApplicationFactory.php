@@ -9,8 +9,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Application::class, function (Faker $faker) {
     return [
-        'status' => $faker->numberBetween(0, 3),
-        'priority' => $faker->numberBetween(0, 2),
+        'status' => $faker->numberBetween(1, 4),
+        'priority' => $faker->numberBetween(1, 3),
         'category_id' => rand(1, 20) > 10 ? Category::inRandomOrder()->first() : null,
         'firstname' => $faker->firstName,
         'lastname' => $faker->lastName,

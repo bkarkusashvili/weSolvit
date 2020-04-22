@@ -15,13 +15,13 @@ class CreateApplicationsTable extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->integer('status')->default(0);
+            $table->integer('status')->default(1);
             $table->integer('priority')->nullable();
-            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreignId('category_id')->nullable();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('company');
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->integer('identity');
             $table->integer('employes');
             $table->string('email');
@@ -29,9 +29,6 @@ class CreateApplicationsTable extends Migration
             $table->string('type');
             $table->text('message');
             $table->timestamps();
-
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

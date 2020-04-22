@@ -1,0 +1,166 @@
+#solved {
+
+    .modal-header {
+        background-color: #00E089;
+        height: 50px;
+        margin-bottom: 20px;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        i {
+            display: flex;
+            margin-top: 40px;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            color: $white;
+            background-color: #12F19A;
+            border-radius: 50%;
+        }
+
+        button {
+            outline: none;
+            opacity: 1;
+        }
+    }
+
+    .modal-content {
+        border-radius: 10px;
+
+        .modal-block {
+            margin-bottom: 30px;
+
+            h3 {
+                font-family: $mainFontCaps;
+                font-size: 18px;
+                color: $menuColor;
+                -webkit-text-stroke: 0.5px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: rgba($menuColor, .8);
+                font-size: 14px;
+            }
+        }
+
+        .modal-company {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & > span {
+                display: block;
+                color: $menuColor;
+                font-size: 16px;
+                font-weight: 500;
+
+                strong {
+                    color: #00E089;
+                }
+            }
+
+            figure {
+                width: 230px;
+                height: 80px;
+                border-radius: 6px;
+                background-color: #F8F9FB;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                transition: all .3s;
+
+                img {
+                    max-width: 150px;
+                    max-height: 60px;
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+#ticket {
+
+    h3 {
+        font-family: $mainFontCaps;
+        font-size: 18px;
+        color: $menuColor;
+        -webkit-text-stroke: 0.5px;
+    }
+
+    p {
+        color: rgba($menuColor, .8);
+        font-size: 14px;
+    }
+
+    .ticket-message {
+        border: 1px solid transparent;
+        background-color: #F8F9FB;
+        padding: 20px 20px 20px 30px;
+        transition: all .2s;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                border-radius: 50%;
+                background-color: #EFF2F6;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #7581B1;
+                outline: none;
+                border: none;
+                font-size: 11px;
+                transition: all .2s;
+            }
+        }
+
+        &:hover {
+            background-color: #F2F4F8;
+            border-color: #D3D7E4;
+
+            button {
+                background-color: #DFE6EF;
+                color: #284469;
+            }
+        }
+    }
+
+
+    .modal-header {
+        border: 0;
+    }
+
+    .modal-body {
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+
+    .modal-content {
+        padding: 0 50px;
+    }
+
+    .ticket-form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #D3D7E4;
+        margin-bottom: 20px;
+        
+        .we-input {
+            width: 49%;
+        }
+    }
+} 

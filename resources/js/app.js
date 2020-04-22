@@ -10,3 +10,4 @@ require('./bootstrap');
 // require('./components/Example');
 require('./components/StatusSelect');
 require('./front');
+require('./back');

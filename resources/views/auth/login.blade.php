@@ -1,39 +1,30 @@
-@extends('layouts.auth')
+@extends('layouts.front', ['template' => 'auth', 'login' => true])
 
 @section('content')
-    <h1>ადმინში შესვლა</h1>
-    <h6 class="caps">შეიყვანეთ მეილი და პაროლი</h6>
+<div class="we-block">
+    <h1>ავტორიზაცია</h1>
     <form method="POST" action="{{ route('login') }}">
     @csrf
-        <div class="form-group">
-            <label for="email">მეილი:</label>
-            <input id="email" type="email" class="form-control @error('email') invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
-            @error('email')
-                <span class="alert alert-danger">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+        @include('components.input', [
+            'name' => 'email',
+            'type' => 'email',
+            'label' => 'ელ.ფოსტა',
+        ])
+        @include('components.input', [
+            'name' => 'password',
+            'type' => 'password',
+            'label' => 'პაროლი',
+        ])
+        <div>
+            <a class="reset" href="{{ route('password.request') }}">დაგავიწყდათ პაროლი?</a>
         </div>
-
-        <div class="form-group">
-            <label for="password">პაროლი:</label>
-            {{-- <div class="split">
-                @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}">აღდგენა</a>
-                @endif
-            </div> --}}
-            <input id="password" type="password" class="form-control @error('password') invalid @enderror" name="password" value="{{ old('password') }}" autocomplete="off" autofocus>
-            @error('password')
-                <span class="alert alert-danger">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+        <div class="auth-footer">
+            <a href="{{ route('register') }}">რეგისტრაცია</a>
+            <button type="submit" class="we-btn we-arr-right">
+                <span>შესვლა</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
-        
-        {{-- <div class="form-group">
-            <input id="remember" type="checkbox" class="form-control @error('password') invalid @enderror" name="remember" value="{{ old('remember') }}">
-            <label for="remember">დამახსოვრება</label>
-        </div> --}}
-        <button type="submit" class="btn">შესვლა</button>
     </form>
+</div>
 @endsection

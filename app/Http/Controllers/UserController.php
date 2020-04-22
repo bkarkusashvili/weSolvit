@@ -12,43 +12,28 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $list = User::orderBy('id', 'desc')->paginate(10);
+        $status = $request->get('status', 0);
+        $role = $request->get('role', '');
+
+        $list = User::orderBy('id', 'desc')->
+            when($status, function ($query, $status) {
+                return $query->where('status', $status);
+            })->
+            when($role, function ($query, $role) {
+                return $query->where('role', $role);
+            })->
+        paginate(10);
+
+        if ($status || $role) {
+            $list->appends([
+                'status' => $status,
+                'role' => $role,
+            ]);
+        }
 
         return view('user.index', compact('list'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
     }
 
     /**
@@ -59,7 +44,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('user.form.'.$user->role, [
+            'item' => $user
+        ]);
     }
 
     /**
@@ -71,7 +58,20 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $role = $request->get('role', null);
+        $data = [];
+
+        if ($role === 'company') {
+            $data = $this->validateCompany($request);
+        } elseif ($role === 'freelance') {
+            $data = $this->validateFreelance($request);
+        } else {
+            return redirect()->back()->withErrors('როლი ვერ მოიძებნა');
+        }
+
+        $user->update($data);
+
+        return redirect()->back();
     }
 
     /**
@@ -82,6 +82,33 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()->back();
+    }
+
+    private function validateCompany(Request $request)
+    {
+        return $request->validate([
+            'company_name' => 'required|string|max:255',
+            'identity' => 'required|integer',
+            'employes' => 'required|integer|min:0',
+            'working_hours' => 'sometimes|regex:/^[0-9]{2}:00 - [0-9]{2}:00$/',
+            'message' => 'sometimes|string|nullable',
+            'phone' => 'required|regex:/^(?:\?995)?5(?:[0-9]\s*){8}$/',
+            'email' => 'required|string|email|max:255|unique:users',
+        ]);
+    }
+    
+    private function validateFreelance(Request $request)
+    {
+        return $request->validate([
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'working_hours' => 'sometimes|regex:/^[0-9]{2}:00 - [0-9]{2}:00$/',
+            'email' => 'required|string|email|max:255|unique:users',
+            'message' => 'sometimes|string|nullable',
+            'phone' => 'required|regex:/^(?:\?995)?5(?:[0-9]\s*){8}$/',
+        ]);
     }
 }

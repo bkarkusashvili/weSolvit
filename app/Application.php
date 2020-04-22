@@ -20,6 +20,16 @@ class Application extends Model
         return $this->belongsTo(User::class)->withDefault(['displayName']);
     }
 
+    public function isClosed()
+    {
+        return $this->status == 4;
+    }
+
+    public function shouldClose()
+    {
+        return request()->get('status', 0) == 4;
+    }
+
     public function getFullnameAttribute()
     {
         return $this->firstname . ' ' . $this->lastname; 
@@ -27,34 +37,34 @@ class Application extends Model
 
     public function getStatusHtmlAttribute()
     {
-        $status = $this->getStatus()[$this->status];
+        $status = self::getStatus()[$this->status];
 
         return '<span class="status '. $status[1] .'">'. $status[0] .'</span>';
     }
 
     public function getPriorityHtmlAttribute()
     {
-        $status = $this->getPriority()[$this->priority];
+        $status = self::getPriority()[$this->priority];
 
         return '<span class="priority '. $status[1] .'">'. $status[0] .'</span>';
     }
 
-    public function getStatus()
+    public static function getStatus()
     {
         return [
-            0 => ['Open', 'info'],
-            1 => ['In Progress', 'progress'],
-            2 => ['Solved', 'success'],
-            3 => ['Closed', 'danger'],
+            1 => ['Open', 'info'],
+            2 => ['In Progress', 'progress'],
+            3 => ['Solved', 'success'],
+            4 => ['Closed', 'danger'],
         ];
     }
 
-    public function getPriority()
+    public static function getPriority()
     {
         return [
-            0 => ['Low', 'info'],
-            1 => ['Medium', 'success'],
-            2 => ['High', 'danger'],
+            1 => ['Low', 'info'],
+            2 => ['Medium', 'success'],
+            3 => ['High', 'danger'],
         ];
     }
 }

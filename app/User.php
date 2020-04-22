@@ -2,22 +2,22 @@
 
 namespace App;
 
+use App\Notifications\ResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -37,6 +37,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function solved()
+    {
+        return $this->hasMany(Solved::class);
+    }
+    
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
+    }
+
     public function GetDisplayNameAttribute()
     {
 
@@ -52,17 +62,44 @@ class User extends Authenticatable
         return $name;
     }
 
-    public function getUserRoles()
+    public function GetStatusHtmlAttribute()
     {
-        return ['admin', 'company', 'freelance'];
+        $status = self::getStatus()[$this->status];
+
+        return "<span class='status $status[1]'>$status[0]</span>";
     }
 
-    public function getStatus()
+    public static function getUserRoles(bool $onlyPublic = true)
+    {
+        $roles = ['admin', 'company', 'freelance'];
+        if ($onlyPublic) {
+            array_shift($roles);
+        }
+
+        return $roles;
+    }
+
+    public static function getStatus()
     {
         return [
-            0 => 'Pending',
-            1 => 'Active',
+            1 => ['Pending', 'info'],
+            2 => ['Active', 'success'],
         ];
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+    
+    public function isActive()
+    {
+        return (bool) $this->status;
+    }
+    
+    public function ownApplication(Application $application)
+    {
+        return $this->id == $application->user_id;
     }
 
 }

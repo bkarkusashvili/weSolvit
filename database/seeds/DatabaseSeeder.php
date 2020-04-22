@@ -15,11 +15,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
-
+        
         if (app()->environment('local')) {
             factory(User::class, 50)->create();
             factory(Category::class, 50)->create();
             factory(Application::class, 50)->create();
         }
+
+        $this->call(SolvedSeeder::class);
     }
 }

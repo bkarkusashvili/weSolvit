@@ -27,6 +27,7 @@
         "jquery": "^3.5.0",
         "material-components-web": "^5.1.0",
         "popper.js": "^1.16.1",
-        "select2": "^4.0.13"
+        "select2": "^4.0.13",
+        "simplebar": "^5.1.0"
     }
 }

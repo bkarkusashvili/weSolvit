@@ -12,8 +12,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
 window.$ = require('jquery');
+window.SimpleBar = require('simplebar/dist/simplebar');
+
 require('popper.js');
 require('bootstrap');
+require('select2');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -31,7 +34,3 @@ require('bootstrap');
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
-
-require('material-components-web');
-
-require('./material');

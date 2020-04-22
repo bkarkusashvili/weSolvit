@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -66,27 +68,50 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        dd($data);
+        $role = $data['role'];
 
-        return User::create([
-            'name' => $data['name'],
+        $user = User::create([
+            'firstname' => $role === 'freelance' ? $data['firstname'] : null,
+            'lastname' => $role === 'freelance' ? $data['lastname'] : null,
+            'cv' => null,
+            
+            'company_name' => $role === 'freelance' ? null : $data['company_name'],
+            'identity' => $role === 'freelance' ? null : $data['identity'],
+            'employes' => $role === 'freelance' ? null : $data['employes'],
+            'image' => null,
+            
+            'role' => $role,
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'working_hours' => $data['working_hours'],
+            'message' => $data['message'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $folder = isset($data['cv']) ? 'cv' : 'company';
+        $fileType = $folder === 'cv' ? 'cv' : 'image';  
+
+        $file = Storage::disk('public')->put($folder, $data[$fileType]);
+        $user->$fileType = $file;
+
+        $user->save();
+
+        return $user;
     }
 
     private function validateCompany(array $data)
     {
         return Validator::make($data, [
             'company_name' => 'required|string|max:255',
-            'identity' => 'required|integer|min:10000|max:99999',
+            'identity' => 'required|integer',
             'employes' => 'required|integer|min:0',
-            'working_hours' => 'required|string|max:255',
+            'working_hours' => 'sometimes|regex:/^[0-9]{2}:00 - [0-9]{2}:00$/',
             'image' => 'required|image|max:2048',
-            'message' => 'required|string',
-            'phone' => 'required',
+            'message' => 'sometimes|string|nullable',
+            'phone' => 'required|regex:/^(?:\?995)?5(?:[0-9]\s*){8}$/',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'terms' => 'required|accepted'
         ]);
     }
     
@@ -95,13 +120,13 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
-            'working_hours' => 'required|string|max:255',
+            'working_hours' => 'sometimes|regex:/^[0-9]{2}:00 - [0-9]{2}:00$/',
             'email' => 'required|string|email|max:255|unique:users',
             'cv' => 'required|file|max:2048',
-            'message' => 'required|string',
-            'ref' => 'required',
-            'phone' => 'required',
+            'message' => 'sometimes|string|nullable',
+            'phone' => 'required|regex:/^(?:\?995)?5(?:[0-9]\s*){8}$/',
             'password' => 'required|string|min:8|confirmed',
+            'terms' => 'required|accepted'
         ]);
     }
 }

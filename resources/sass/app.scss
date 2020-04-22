@@ -12,33 +12,29 @@
     src: url(../fonts/bpg_mrgvlovani_caps.ttf);
 }
 
-//@import url("//cdn.web-fonts.ge/fonts/bpg-glaho/css/bpg-glaho.min.css");
-//@import url("//cdn.web-fonts.ge/fonts/bpg-nino-mtavruli/css/bpg-nino-mtavruli.min.css");
-
 @import '~@fortawesome/fontawesome-free/css/all';
 
 // Packages
 @import '~bootstrap';
-// @import '~select2/dist/css/select2';
+@import '~simplebar/dist/simplebar';
 @import '~material-components-web/dist/material-components-web.css';
+@import '~select2/dist/css/select2';
 
 // Variables
 @import 'variables';
+@import 'media';
 
 // Componenets
 @import 'components/index';
 @import 'main';
 @import 'auth';
 @import 'front';
+@import 'modal';
 
 * {
     font-family: $mainFont;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-html, body {
-    scroll-behavior: smooth;
 }
 
 .caps {

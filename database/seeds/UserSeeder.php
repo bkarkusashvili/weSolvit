@@ -13,13 +13,28 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        // User::create([
-        //     'name' => 'admin',
-        //     'email' => 'admin@goodtrips.ge',
-        //     'role' => 'admin',
-        //     'status' => 1,
-        //     'password' => Hash::make('admin'),
-        //     'email_verified_at' => now(),
-        // ]);
+        User::create([
+            'email' => 'admin@wesolvit.ge',
+            'role' => 'admin',
+            'status' => 2,
+            'password' => Hash::make('admin'),
+            'email_verified_at' => now(),
+        ]);
+
+        User::create([
+            'email' => 'company@wesolvit.ge',
+            'role' => 'company',
+            'status' => 2,
+            'password' => Hash::make('admin'),
+            'email_verified_at' => now(),
+        ]);
+
+        User::create([
+            'email' => 'inactive@wesolvit.ge',
+            'role' => 'company',
+            'status' => 1,
+            'password' => Hash::make('admin'),
+            'email_verified_at' => now(),
+        ]);
     }
 }

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="19.062" viewBox="0 0 17 19.062">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #005aff;
+        stroke-linecap: round;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_184" data-name="Rectangle 184" class="cls-1" width="16" height="16" transform="translate(79 990.438)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_2088" data-name="Group 2088" transform="translate(-83.5 -19)">
+    <g id="Component_25_1" data-name="Component 25 – 1" transform="translate(84 19)">
+      <line id="Line_25" data-name="Line 25" class="cls-2" x2="15" transform="translate(0.5 18.062)"/>
+      <g id="Mask_Group_1" data-name="Mask Group 1" class="cls-3" transform="translate(-79 -990.438)">
+        <g id="Group_2071" data-name="Group 2071">
+          <line id="Line_1" data-name="Line 1" class="cls-2" x2="9.441" transform="translate(86.708 1003.438) rotate(-90)"/>
+          <path id="Path_1" data-name="Path 1" class="cls-2" d="M0,0H6.588V6.588" transform="translate(82.121 998.096) rotate(-45)"/>
+        </g>
+        <g id="Group_2072" data-name="Group 2072" transform="translate(0 27)">
+          <line id="Line_1-2" data-name="Line 1" class="cls-2" x2="9.441" transform="translate(86.708 1003.438) rotate(-90)"/>
+          <path id="Path_1-2" data-name="Path 1" class="cls-2" d="M0,0H6.588V6.588" transform="translate(82.121 998.096) rotate(-45)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
