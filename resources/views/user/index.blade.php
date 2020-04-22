@@ -29,7 +29,7 @@
                 <select name="role" class="filter-select">
                     <option value="">ყველა</option>
                     @foreach (App\User::getUserRoles() as $role)
-                        <option value="{{$role}}" {{request()->get('role') == $key ? 'selected' : ''}}>
+                        <option value="{{$role}}" {{request()->get('role') == $role ? 'selected' : ''}}>
                             {{ucfirst($role)}}
                         </option>
                     @endforeach
@@ -58,7 +58,15 @@
         @foreach ($list as $item)
             <tr>
                 <td>{{ $item->displayName }}</td>
-                <td>{!! $item->status_html !!}</td>
+                <td>
+                    <select class="status-select" style="width: 90px">
+                        @foreach ($item->getStatus() as $key => $i)
+                            <option value="{{$key}}" {{$key == $item->status ? 'selected':''}}>
+                                {{ $i[0] }}
+                            </option>
+                        @endforeach
+                    </select>
+                </td>
                 <td>
                     <strong>{{ ucfirst($item->role) }}</strong>
                 </td>

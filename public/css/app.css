@@ -28779,6 +28779,10 @@ form .form-group:last-of-type {
   display: flex;
 }
 
+#app .select-bigger {
+  width: 300px;
+}
+
 .success {
   color: #2AD577;
   background-color: rgba(42, 213, 119, 0.2);

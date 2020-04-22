@@ -15,7 +15,7 @@
     <form action="{{ route($page.'.index') }}" method="GET">
         <div class="row">
             @if ($isAdmin)
-            <div class="form-group col-3 pr-1">
+            <div class="form-group col-2 pr-1">
                 <label>პარტნიორი</label>
                 <select name="partner" class="filter-select-search">
                     <option value="0">ყვველა</option>

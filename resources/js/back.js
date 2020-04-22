@@ -10,6 +10,7 @@ $('.priority-select').select2({
 
 $('.partner-select').select2({
     theme: 'classic',
+    dropdownAutoWidth : true
 });
 
 $('.filter-select').select2({
@@ -19,4 +20,5 @@ $('.filter-select').select2({
 
 $('.filter-select-search').select2({
     theme: 'classic',
+    dropdownAutoWidth : true
 });
