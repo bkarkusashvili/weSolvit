@@ -146,6 +146,27 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'Name',
+        'firstname' => 'Firstname',
+        'lastname' => 'Lastname',
+        'company' => 'Company',
+        'company_name' => 'Comnay name',
+        'identity' => 'Identity',
+        'employes' => 'Number of employees',
+        'email' => 'E-Mail',
+        'phone' => 'Phone',
+        'working_hours' => 'Working hours',
+        'password' => 'Password',
+        'image' => 'Logo',
+        'cv' => 'CV',
+        'terms' => 'Agree to the terms',
+        'type' => 'Field of activity',
+        'message' => 'Text',
+        'text_ge' => 'Text (GEO.)',
+        'text_en' => 'Text (ENG.)',
+        'comment_ge' => 'Comment (GEO.)',
+        'comment_en' => 'Comment (ENG.)',
+    ],
 
 ];

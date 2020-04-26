@@ -36,12 +36,12 @@ class ApplicationController extends Controller
             return $query->where('priority', $priority);
         })->when($category, function ($query, $category) {
             return $query->where('category_id', $category);
-        })->when($nonAdmin, function ($query, $userId) {
+        })->when($nonAdmin, function ($query) use ($userId) {
             return $query->where('user_id', $userId);
         })->paginate(10);
         
-        $companies = User::where([['role', '=', 'company'], ['status', '=', '1']])->get();
-        $freelances = User::where([['role', '=', 'freelance'], ['status', '=', '1']])->get();
+        $companies = User::where([['role', '=', 'company'], ['status', '=', '2']])->get();
+        $freelances = User::where([['role', '=', 'freelance'], ['status', '=', '2']])->get();
         $categories = Category::all();
 
         if ($status || $partner || $priority || $category) {

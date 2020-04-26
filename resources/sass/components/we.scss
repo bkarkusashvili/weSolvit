@@ -143,6 +143,39 @@ $weBlue: #005AFF;
         border-bottom: 1px solid #D3D7E4;
         transition: all .2s;
     }
+    
+    &.we-icon {
+        
+        input {
+            padding-right: 46px;
+        }
+    }
+
+    .icon {
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #7581B1;
+        border: none;
+        text-decoration: none;
+        background-color: transparent;
+        outline: none;
+
+        &:hover {
+            color: #7581B1;
+        }
+
+        i {
+            font-size: 0;
+            transition: all .2s;
+
+            &.show {
+                font-size: inherit;
+            }
+        }
+    }
 
     &:hover {
 

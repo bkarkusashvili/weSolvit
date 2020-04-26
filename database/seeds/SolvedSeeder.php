@@ -20,33 +20,33 @@ class SolvedSeeder extends Seeder
         ])->inRandomOrder()->limit(4)->get();
 
         Solved::create([
-            'text_ge' => $faker->text(500),
+            'text_ka' => $faker->text(500),
             'text_en' => $faker->text(500),
-            'comment_ge' => $faker->text(500),
+            'comment_ka' => $faker->text(500),
             'comment_en' => $faker->text(500),
             'user_id' => $users[0]->id,
         ]);
         
         Solved::create([
-            'text_ge' => $faker->text(500),
+            'text_ka' => $faker->text(500),
             'text_en' => $faker->text(500),
-            'comment_ge' => $faker->text(500),
+            'comment_ka' => $faker->text(500),
             'comment_en' => $faker->text(500),
             'user_id' => $users[1]->id,
         ]);
         
         Solved::create([
-            'text_ge' => $faker->text(500),
+            'text_ka' => $faker->text(500),
             'text_en' => $faker->text(500),
-            'comment_ge' => $faker->text(500),
+            'comment_ka' => $faker->text(500),
             'comment_en' => $faker->text(500),
             'user_id' => $users[2]->id,
         ]);
 
         Solved::create([
-            'text_ge' => $faker->text(500),
+            'text_ka' => $faker->text(500),
             'text_en' => $faker->text(500),
-            'comment_ge' => $faker->text(500),
+            'comment_ka' => $faker->text(500),
             'comment_en' => $faker->text(500),
             'user_id' => $users[3]->id,
         ]);

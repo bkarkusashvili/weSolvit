@@ -49312,6 +49312,14 @@ $('.front-partner-header nav a').click(function (e) {
     scrollLeft: partnerNum * itemSize
   });
 });
+$('.icon').click(function (e) {
+  e.preventDefault();
+  var input = $(e.target).parents('.icon').siblings('input');
+  var type = input.attr('type') == 'text' ? 'password' : 'text';
+  input.attr('type', type);
+  $(e.target).parents('.icon').find('.fa-eye').toggleClass('show');
+  $(e.target).parents('.icon').find('.fa-eye-slash').toggleClass('show');
+});
 
 /***/ }),
 

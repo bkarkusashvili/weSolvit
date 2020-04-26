@@ -28191,6 +28191,13 @@ form .form-group:last-of-type {
   margin-bottom: 0;
 }
 
+form .form-group .logo {
+  max-width: 120px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+}
+
 #auth form .form-group input[type=email],
 #auth form .form-group input[type=password] {
   width: 400px;
@@ -28527,6 +28534,36 @@ form .form-group:last-of-type {
   border-radius: 5px 5px 0 0;
   border-bottom: 1px solid #D3D7E4;
   transition: all 0.2s;
+}
+
+.we-input.we-icon input {
+  padding-right: 46px;
+}
+
+.we-input .icon {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7581B1;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.we-input .icon:hover {
+  color: #7581B1;
+}
+
+.we-input .icon i {
+  font-size: 0;
+  transition: all 0.2s;
+}
+
+.we-input .icon i.show {
+  font-size: inherit;
 }
 
 .we-input:hover .hint {
@@ -29215,6 +29252,8 @@ span.priority {
 
 #front.auth .we-block.register .terms {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #front.auth .we-block.register .terms label {
@@ -30241,6 +30280,12 @@ span.priority {
 
 .mobile-nav .support a {
   margin-left: 7px;
+}
+
+#terms {
+  padding: 80px 100px;
+  color: #284469;
+  font-family: "BGP Arial", sans-serif;
 }
 
 #solved .modal-header {

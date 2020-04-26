@@ -15,9 +15,9 @@ class CreateSolvedsTable extends Migration
     {
         Schema::create('solveds', function (Blueprint $table) {
             $table->id();
-            $table->text('text_ge');
+            $table->text('text_ka');
             $table->text('text_en');
-            $table->text('comment_ge');
+            $table->text('comment_ka');
             $table->text('comment_en');
             $table->foreignId('user_id')->nullable();
             $table->timestamps();

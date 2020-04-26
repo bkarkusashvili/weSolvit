@@ -98,7 +98,7 @@
             </div>
             <div class="form-group d-info">
                 <label>ლოგო</label>
-                {{-- <img src="{{$item->image}}"> --}}
+                <img class="logo" src="{{url($item->logo)}}">
             </div>
         </div>
     </div>

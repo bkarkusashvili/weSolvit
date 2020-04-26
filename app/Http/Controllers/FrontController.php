@@ -17,8 +17,7 @@ class FrontController extends Controller
             ['role', 'company'],
             ['status', '2'],
         ])->limit(6)->get();
-        
-        
+                
         $stats = [
             'total' => Application::total(),
             'progress' => Application::progress(),
@@ -26,6 +25,11 @@ class FrontController extends Controller
         ];
         
         return view('front.home', compact('solved', 'partners', 'stats'));
+    }
+
+    public function terms()
+    {
+        return view('terms.index');
     }
 
 }

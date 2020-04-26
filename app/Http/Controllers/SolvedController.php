@@ -28,8 +28,8 @@ class SolvedController extends Controller
      */
     public function edit(Solved $solved)
     {
-        $companies = User::where([['role', '=', 'company'], ['status', '=', '1']])->get();
-        $freelances = User::where([['role', '=', 'freelance'], ['status', '=', '1']])->get();
+        $companies = User::where([['role', '=', 'company'], ['status', '=', '2']])->get();
+        $freelances = User::where([['role', '=', 'freelance'], ['status', '=', '2']])->get();
 
         return view('solved.form', [
             'item' => $solved,

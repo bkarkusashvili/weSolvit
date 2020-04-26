@@ -104,7 +104,7 @@
                 </span>
             </label>
             @error('terms')
-                <span class="error">{{ $message }}</span>
+                <span class="error w-100">{{ $message }}</span>
             @enderror
         </div>
         <div class="auth-footer">

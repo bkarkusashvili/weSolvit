@@ -9,9 +9,15 @@
     $class = $value ? 'active' : '';
 @endphp
 
-<label class="we-input" data-input="{{ $name }}">
+<label class="we-input {{$type == 'password' ? 'we-icon' : ''}}" data-input="{{ $name }}">
     <input class="{{ $class }} @error($name) invalid @enderror" type="{{ $type }}" name="{{ $name }}" value="{{ $value }}" autocomplete="off">
     <span class="hint">{{ $label }}</span>
+    @if ($type == 'password')
+        <a class="icon">
+            <i class="fas fa-eye show"></i>
+            <i class="fas fa-eye-slash"></i>
+        </a>
+    @endif
     @error($name)
         <span class="error">{{ $message }}</span>
     @enderror

@@ -84,6 +84,13 @@ form {
         &:last-of-type {
             margin-bottom: 0;
         }
+
+        .logo {
+            max-width: 120px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+        }
     }
 }
 

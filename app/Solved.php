@@ -15,11 +15,11 @@ class Solved extends Model
 
     public function getTextAttribute()
     {
-        return $this->text_ge;
+        return $this['text_'. app()->getLocale()];
     }
 
     public function getCommentAttribute()
     {
-        return $this->comment_ge;
+        return $this['comment'. app()->getLocale()];
     }
 }

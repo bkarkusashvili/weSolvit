@@ -296,6 +296,8 @@
 
                 .terms {
                     width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
 
                     label {
                         color: #7581B1;
@@ -1397,4 +1399,10 @@
             margin-left: 7px;
         }
     }
+}
+
+#terms {
+    padding: 80px 100px;
+    color: $menuColor;
+    font-family: $mainFont;
 }

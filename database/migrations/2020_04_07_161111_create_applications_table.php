@@ -16,7 +16,7 @@ class CreateApplicationsTable extends Migration
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->integer('status')->default(1);
-            $table->integer('priority')->nullable();
+            $table->integer('priority')->default(1);
             $table->foreignId('category_id')->nullable();
             $table->string('firstname');
             $table->string('lastname');

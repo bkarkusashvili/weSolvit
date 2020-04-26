@@ -62,13 +62,13 @@
                     <div class="item-wrap">
                         <div class="item">
                             <div class="wrap">
-                                <img src="{{ url('images/solvit.png') }}" alt="{{$partners->get($i * 2)->displayName}}">
+                                <img src="{{ url($partners->get($i * 2)->logo) }}" alt="{{$partners->get($i * 2)->displayName}}">
                             </div>
                         </div>
                         @if ($partners->get($i * 2 + 1))
                         <div class="item">
                             <div class="wrap">
-                                <img src="{{ url('images/solvit.png') }}" alt="{{$partners->get($i * 2 + 1)->displayName}}">
+                                <img src="{{ url($partners->get($i * 2 + 1)->logo) }}" alt="{{$partners->get($i * 2 + 1)->displayName}}">
                             </div>
                         </div>
                         @endif

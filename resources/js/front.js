@@ -182,3 +182,14 @@ $('.front-partner-header nav a').click(e => {
 
     container.stop().animate({scrollLeft: partnerNum * itemSize});
 });
+
+$('.icon').click(e => {
+    e.preventDefault();
+    const input = $(e.target).parents('.icon').siblings('input');
+    const type = input.attr('type') == 'text' ? 'password' : 'text'; 
+    
+    input.attr('type', type);
+    
+    $(e.target).parents('.icon').find('.fa-eye').toggleClass('show');
+    $(e.target).parents('.icon').find('.fa-eye-slash').toggleClass('show');
+});

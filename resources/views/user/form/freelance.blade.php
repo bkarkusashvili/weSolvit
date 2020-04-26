@@ -88,7 +88,7 @@
             </div>
             <div class="form-group d-info">
                 <label>CV</label>
-                <a href="{{$item->cv}}" target="_blank">ნახვა</a>
+                <a href="{{Storage::url($item->cv)}}" target="_blank">ნახვა</a>
             </div>
         </div>
     </div>

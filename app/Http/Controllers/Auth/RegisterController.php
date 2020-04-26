@@ -122,7 +122,7 @@ class RegisterController extends Controller
             'lastname' => 'required|string|max:255',
             'working_hours' => 'sometimes|regex:/^[0-9]{2}:00 - [0-9]{2}:00$/',
             'email' => 'required|string|email|max:255|unique:users',
-            'cv' => 'required|file|max:2048',
+            'cv' => 'required|mimes:docx,pdf,txt|max:2048',
             'message' => 'sometimes|string|nullable',
             'phone' => 'required|regex:/^(?:\?995)?5(?:[0-9]\s*){8}$/',
             'password' => 'required|string|min:8|confirmed',

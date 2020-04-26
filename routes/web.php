@@ -7,7 +7,7 @@ Route::redirect('/', app()->getLocale() . '/');
 Route::prefix('{locale}')->middleware('locale')->group(function () {    
     Auth::routes();
     Route::get('/', 'FrontController@home')->name('front.home');
-    Route::get('/terms', 'FrontController@home')->name('terms');
+    Route::get('/terms', 'FrontController@terms')->name('terms');
 });
 
 Route::prefix('admin')->resource('application', 'ApplicationController')->only(['store']);
