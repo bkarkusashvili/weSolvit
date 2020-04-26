@@ -28566,6 +28566,45 @@ form .form-group .logo {
   font-size: inherit;
 }
 
+.we-input .work-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7581B1;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.we-input .work-icon:hover {
+  color: #7581B1;
+}
+
+.we-input .work-icon i {
+  font-size: 0;
+  transition: all 0.2s;
+}
+
+.we-input .work-icon i.active {
+  font-size: inherit;
+}
+
+.we-input .work-icon i.time {
+  color: #005AFF;
+}
+
+.we-input .work-icon i.delete {
+  color: #A6AECE;
+  transition: color 0.2s;
+}
+
+.we-input .work-icon i.delete:hover {
+  color: #E65571;
+}
+
 .we-input:hover .hint {
   color: #7581B1;
 }
@@ -30105,13 +30144,54 @@ span.priority {
   margin-bottom: 20px;
 }
 
+@media (max-width: 991.98px) {
+  .we-modal .modal-body {
+    padding: 0px 15px 40px;
+  }
+}
+
 #working .working-wrap {
   display: flex;
   margin-bottom: 15px;
+  padding: 0px 25px;
+  position: relative;
+}
+
+#working .working-wrap::before {
+  content: "\F017";
+  position: absolute;
+  font-size: 18px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-40%);
+  color: #005AFF;
+  font-family: "Font Awesome 5 Free";
 }
 
 #working .working-wrap .we-input {
+  position: relative;
   margin: 0 5px;
+}
+
+#working .working-wrap .we-input::before {
+  content: "\F107";
+  position: absolute;
+  font-size: 15px;
+  display: flex;
+  color: #284469;
+  right: 15px;
+  top: 40%;
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+#working .working-wrap .we-input.down::before {
+  transform: rotate(180deg);
+}
+
+#working .working-wrap .we-wrap span {
+  cursor: pointer;
 }
 
 .mobile-nav {
@@ -30410,6 +30490,7 @@ span.priority {
   border: 1px solid transparent;
   background-color: #F8F9FB;
   padding: 20px 20px 20px 30px;
+  word-wrap: break-word;
   transition: all 0.2s;
 }
 

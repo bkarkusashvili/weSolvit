@@ -177,6 +177,45 @@ $weBlue: #005AFF;
         }
     }
 
+    .work-icon {
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #7581B1;
+        border: none;
+        text-decoration: none;
+        background-color: transparent;
+        outline: none;
+
+        &:hover {
+            color: #7581B1;
+        }
+
+        i {
+            font-size: 0;
+            transition: all .2s;
+
+            &.active {
+                font-size: inherit;
+            }
+
+            &.time {
+                color: #005AFF;
+            }
+
+            &.delete {
+                color: #A6AECE;
+                transition: color .2s;
+
+                &:hover {
+                    color: #E65571;
+                }
+            }
+        }
+    }
+
     &:hover {
 
         .hint {

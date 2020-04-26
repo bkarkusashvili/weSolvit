@@ -1209,6 +1209,13 @@
             color: #00E089;
             margin-bottom: 20px;
         }
+
+        @include md {
+
+            & {
+                padding: 0px 15px 40px;
+            }
+        }
     }
 }
 
@@ -1217,14 +1224,55 @@
     .working-wrap {
         display: flex;
         margin-bottom: 15px;
+        padding: 0px 25px;
+        position: relative;
+
+        &::before {
+            content: '\f017';
+            position: absolute;
+            font-size: 18px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-40%);
+            color: #005AFF;
+            font-family: $fontAwesome;
+        }
 
         .we-input {
+            position: relative;
             margin: 0 5px;
+
+            &::before {
+                content: '\f107';
+                position: absolute;
+                font-size: 15px;
+                display: flex;
+                color: #284469;
+                right: 15px;
+                top: 40%;
+                font-family: $fontAwesome;
+                font-weight: bold;
+                transition: transform .2s;
+            }
+
+            &.down {
+
+                &::before {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .we-wrap {
+
+            span {
+                cursor: pointer;
+            }
         }
     }
 }
 
-.mobile-nav{
+.mobile-nav {
     display: flex;
     width: 100%;
     height: 100vh;
