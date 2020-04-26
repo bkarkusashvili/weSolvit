@@ -47,6 +47,13 @@ class User extends Authenticatable
         $this->notify(new ResetPassword($token));
     }
 
+    public function getLogoAttribute()
+    {
+        $image = $this->role == 'company' ? $this->image : '';
+
+        return $image;
+    }
+
     public function GetDisplayNameAttribute()
     {
 

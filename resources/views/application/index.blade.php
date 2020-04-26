@@ -80,12 +80,12 @@
     <thead>
         <tr>
             @if ($isAdmin)
+            <th>მეილი</th>
             <th>კატეგორია</th>
             <th>კომპანია</th>
             @endif
             <th>სტატუსი</th>
             <th>პრიორიტეტი</th>
-            <th>თარიღი</th>
             <th>მოქმედება</th>
         </tr>
     </thead>
@@ -93,8 +93,9 @@
         @foreach ($list as $item)
             <tr>
                 @if ($isAdmin)
+                <td>{{$item->email}}</td>
                 <td>
-                    <select name="category" class="filter-select-search">
+                    <select class="filter-select-search" name="category_id" data-action="{{ route($page.'.category', $item->id) }}">
                         <option value="">ცარიელი</option>
                         @foreach ($categories as $category)
                             <option value="{{$category->id}}" {{$category->id == $item->category_id ? 'selected' : ''}}>
@@ -104,7 +105,7 @@
                     </select>
                 </td>
                 <td>
-                    <select class="partner-select" style=" width: 150px">
+                    <select class="partner-select" style=" width: 150px" name="user_id" data-action="{{ route($page.'.partner', $item->id) }}">
                         <option value="0">ცარიელი</option>
                         <optgroup label="კომპანიები">
                             @foreach ($companies as $partner)
@@ -123,7 +124,7 @@
                     @if (!$isAdmin && $item->status == 4)
                     {!! $item->status_html !!}
                     @else
-                    <select class="status-select">
+                    <select class="status-select" name="status" data-action="{{ route($page.'.status', $item->id) }}">
                         @foreach ($item->getStatus() as $key => $i)
                             <option value="{{$key}}" {{$key == $item->status ? 'selected':''}} {{!$isAdmin && $key == 4 ? 'disabled':''}}>
                                 {{ $i[0] }}
@@ -134,7 +135,7 @@
                 </td>
                 <td>
                     @if ($isAdmin)
-                        <select class="priority-select">
+                        <select class="priority-select" name="priority" data-action="{{ route($page.'.priority', $item->id) }}">
                             @foreach ($item->getPriority() as $key => $i)
                             <option value="{{$key}}" {{$key == $item->priority ? 'selected':''}}>{{ $i[0] }}</option>
                             @endforeach
@@ -143,7 +144,6 @@
                         {!! $item->priority_html !!}
                     @endif
                 </td>
-                <td>{{ $item->created_at->format('d.m.Y') }}</td>
                 <td class="action">
                     @if (Auth::user()->isAdmin())
                     <a class="left" href="{{ route($page.'.edit', $item) }}">

@@ -2,6 +2,7 @@
 
 @php
     $isAdmin = Auth::user()->isAdmin();
+    $lang = app()->getLocale();
 @endphp
 
 @section('layout')
@@ -51,7 +52,7 @@
         </aside>
         <div class="content">
             <header>
-                <form action="{{ route('logout') }}" method="POST">
+                <form action="{{ route('logout', $lang) }}" method="POST">
                     @csrf
                     <input type="submit" class="we-btn" value="გასვლა">
                 </form>
@@ -59,6 +60,12 @@
             <main>
                 @yield('content')
             </main>
+        </div>
+        <div class="info-alert" style="display: none;">
+            <span></span>
+            <button class="close">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
     </div>
 @endsection

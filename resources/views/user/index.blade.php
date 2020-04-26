@@ -59,7 +59,7 @@
             <tr>
                 <td>{{ $item->displayName }}</td>
                 <td>
-                    <select class="status-select" style="width: 90px">
+                    <select class="status-select" style="width: 90px" name="status" data-action="{{ route($page.'.status', $item->id) }}">
                         @foreach ($item->getStatus() as $key => $i)
                             <option value="{{$key}}" {{$key == $item->status ? 'selected':''}}>
                                 {{ $i[0] }}

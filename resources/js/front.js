@@ -90,23 +90,37 @@ $('#working .submit-working').click(e => {
 
 
 $('[href="#partners"]').click(e => {
-    e.preventDefault();
-
+    
+    const el = $('#partners');
     const addHeight = $('#front-header').height();
 
+    if (el.length) {
+        e.preventDefault();
+    } else {
+        return;
+    }
+    
     $('html, body').animate({
-        scrollTop: $("#partners").offset().top - addHeight
+        scrollTop: el.offset().top - addHeight
      }, 500);
+     $('.mobile-nav').fadeOut();
 });
 
 $('[href="#faqs"]').click(e => {
-    e.preventDefault();
 
+    const el = $('#faqs');
     const addHeight = $('#front-header').height();
 
+    if (el.length) {
+        e.preventDefault();
+    } else {
+        return;
+    }
+
     $('html, body').animate({
-        scrollTop: $("#faqs").offset().top - addHeight
+        scrollTop: el.offset().top - addHeight
      }, 500);
+     $('.mobile-nav').fadeOut();
 });
 
 $('.front-ticket textarea').keyup(e => {
@@ -119,4 +133,52 @@ $('#ticket').on('show.bs.modal', e => {
     const value = $('.front-ticket textarea').val();
     $('#ticket .ticket-message p').html(value);
     $('#ticket [name="message"]').val(value);
+});
+
+$('.menu').click(e => {
+    $('.mobile-nav').fadeIn();
+});
+
+$('.mobile-nav .close').click(e => {
+    $('.mobile-nav').fadeOut();
+});
+
+let solvedNum = 0;
+$('.front-solved-header nav a').click(e => {
+    const itemSize = 316;
+    const position = $(e.target).attr('class');
+    const container = $('.solved-list');
+    const itemCount = container.find('.item').length;
+    
+    if (position === 'next') {
+        if (solvedNum < itemCount - 1) {
+            solvedNum++;
+        }
+    } else {
+        if (solvedNum > 0) {
+            solvedNum--;
+        }
+    }
+
+    container.stop().animate({scrollLeft: solvedNum * itemSize});
+});
+
+let partnerNum = 0;
+$('.front-partner-header nav a').click(e => {
+    const itemSize = 160;
+    const position = $(e.target).attr('class');
+    const container = $('.front-partner .list');
+    const itemCount = container.find('.item-wrap').length;
+    
+    if (position === 'next') {
+        if (partnerNum < itemCount - 1) {
+            partnerNum++;
+        }
+    } else {
+        if (partnerNum > 0) {
+            partnerNum--;
+        }
+    }
+
+    container.stop().animate({scrollLeft: partnerNum * itemSize});
 });

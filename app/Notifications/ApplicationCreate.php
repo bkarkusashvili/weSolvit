@@ -6,23 +6,20 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use Illuminate\Support\Facades\Lang;
 
-class ResetPassword extends ResetPasswordNotification implements ShouldQueue
+class ApplicationCreate extends Notification implements ShouldQueue
 {
     use Queueable;
-
-    public $token;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($token)
+    public function __construct()
     {
-        $this->token = $token;
+        //
     }
 
     /**
@@ -45,12 +42,7 @@ class ResetPassword extends ResetPasswordNotification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject(Lang::get('email.reset.subject'))
-                    ->line(Lang::get('email.reset.reset-text'))
-                    ->action(Lang::get('email.reset.button'), route('password.reset', [
-                        app()->getLocale(), $this->token, 'email' => $notifiable->email
-                        ]))
-                    ->line(Lang::get('email.reset.expire-text'));
+                    ->line(Lang::get('email.welcome'));
     }
 
     /**

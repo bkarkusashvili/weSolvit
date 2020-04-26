@@ -2,6 +2,7 @@
 
 use App\Solved;
 use App\User;
+use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 
 class SolvedSeeder extends Seeder
@@ -11,38 +12,43 @@ class SolvedSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
+        $users = User::where([
+            ['role', 'company'],
+            ['status', '2']
+        ])->inRandomOrder()->limit(4)->get();
+
         Solved::create([
-            'text_ge' => '', 
-            'text_en' => '', 
-            'comment_ge' => '', 
-            'comment_en' => '', 
-            'user_id' => User::inRandomOrder()->first()->id, 
+            'text_ge' => $faker->text(500),
+            'text_en' => $faker->text(500),
+            'comment_ge' => $faker->text(500),
+            'comment_en' => $faker->text(500),
+            'user_id' => $users[0]->id,
         ]);
         
         Solved::create([
-            'text_ge' => '', 
-            'text_en' => '', 
-            'comment_ge' => '', 
-            'comment_en' => '', 
-            'user_id' => User::inRandomOrder()->first()->id, 
+            'text_ge' => $faker->text(500),
+            'text_en' => $faker->text(500),
+            'comment_ge' => $faker->text(500),
+            'comment_en' => $faker->text(500),
+            'user_id' => $users[1]->id,
         ]);
         
         Solved::create([
-            'text_ge' => '', 
-            'text_en' => '', 
-            'comment_ge' => '', 
-            'comment_en' => '', 
-            'user_id' => User::inRandomOrder()->first()->id, 
+            'text_ge' => $faker->text(500),
+            'text_en' => $faker->text(500),
+            'comment_ge' => $faker->text(500),
+            'comment_en' => $faker->text(500),
+            'user_id' => $users[2]->id,
         ]);
 
         Solved::create([
-            'text_ge' => '', 
-            'text_en' => '', 
-            'comment_ge' => '', 
-            'comment_en' => '', 
-            'user_id' => User::inRandomOrder()->first()->id, 
+            'text_ge' => $faker->text(500),
+            'text_en' => $faker->text(500),
+            'comment_ge' => $faker->text(500),
+            'comment_en' => $faker->text(500),
+            'user_id' => $users[3]->id,
         ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Application;
 use App\Category;
+use App\Notifications\ApplicationCreate;
 use App\Notifications\AssignNotification;
 use App\User;
 use Illuminate\Http\Request;
@@ -63,11 +64,10 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', Application::class);
-
         $data = $this->validateRequest($request);
-
-        Application::create($data);
+        
+        $application = Application::create($data);
+        $application->notify(new ApplicationCreate());
 
         return redirect()->back()->with('status', 'success');
     }
@@ -141,7 +141,7 @@ class ApplicationController extends Controller
 
         $data = $request->validate(['priority' => 'required|integer|min:1|max:3']);
 
-        $application->update($data); 
+        $application->update($data);
 
         return response()->json([
             'status' => 'success',

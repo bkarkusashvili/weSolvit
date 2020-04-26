@@ -9,21 +9,17 @@
             </div>
             <div class="modal-body">
                 <div class="modal-block">
-                    <h3>პრობლემის დასახელება</h3>
-                    <p>
-                        თუ გაქვთ ვინმეს გამოცდილება გთხოვთ გამიწიოთ კონსულტაცია ქლაუდ ტრანსფორმაციის-მიგრაციის საკითხში. წინასწარ გიხდით მადლობას დახმარებისთვის თუ გაქვთ ვინმეს გამოცდილება გთხოვთ გამიწიოთ კონსულტაცია ქლაუდ ტრანსფორმაციის-მიგრაციის საკითხში. წინასწარ გიხდით მადლობას დახმარებისთვის თუ გაქვთ ვინმეს გამოცდილება გთხოვთ გამიწიოთ კონსულტაცია ქლაუდ ტრანსფორმაციის-მიგრაციის საკითხში. წინასწარ გიხდით მადლობას დახმარებისთვის
-                    </p>
+                    <h3>@lang('front.solved.name')</h3>
+                    <p>{{$item->text}}</p>
                 </div>
                 <div class="modal-block">
-                    <h3>კომენტარი</h3>
-                    <p>
-                        აქ იქნება კომპანიის კომენტარი, რომელსაც ატვირთავს ადმინისტრატორი. აღწერაში უნდა იყოს პრობლემის მოგვარების შესახებ მნიშვნელობანი ფაქტები და დროულობა.
-                    </p>
+                    <h3>@lang('front.solved.comment')</h3>
+                    <p>{{$item->comment}}</p>
                 </div>
                 <div class="modal-company">
-                    <span>მოაგვარა <strong>SOLVIT</strong>-მა</span>
+                    <span>@lang('front.solved.solve') <strong>{{$item->user->displayName}}</strong>@lang('front.solved.by')</span>
                     <figure>
-                        <img src="{{ url('images/solvit.png') }}" alt="">
+                        <img src="{{ url($item->user->logo) }}" alt="{{$item->user->displayName}}">
                     </figure>
                 </div>
             </div>

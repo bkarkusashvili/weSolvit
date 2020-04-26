@@ -21,20 +21,20 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        User::create([
-            'email' => 'company@wesolvit.ge',
-            'role' => 'company',
-            'status' => 2,
-            'password' => Hash::make('admin'),
-            'email_verified_at' => now(),
-        ]);
+        // User::create([
+        //     'email' => 'company@wesolvit.ge',
+        //     'role' => 'company',
+        //     'status' => 2,
+        //     'password' => Hash::make('admin'),
+        //     'email_verified_at' => now(),
+        // ]);
 
-        User::create([
-            'email' => 'inactive@wesolvit.ge',
-            'role' => 'company',
-            'status' => 1,
-            'password' => Hash::make('admin'),
-            'email_verified_at' => now(),
-        ]);
+        // User::create([
+        //     'email' => 'inactive@wesolvit.ge',
+        //     'role' => 'company',
+        //     'status' => 1,
+        //     'password' => Hash::make('admin'),
+        //     'email_verified_at' => now(),
+        // ]);
     }
 }

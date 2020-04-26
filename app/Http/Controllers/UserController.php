@@ -90,6 +90,18 @@ class UserController extends Controller
         return redirect()->back();
     }
 
+    public function setStatus(Request $request, User $user)
+    {
+        $data = $request->validate(['status' => 'required|integer|min:1|max:2']);
+
+        $user->update($data);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'მონაცემები განახლდა'
+        ]);
+    }
+
     private function validateCompany(Request $request)
     {
         return $request->validate([

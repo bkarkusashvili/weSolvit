@@ -16,11 +16,11 @@
         <div class="modal-body">
             <div class="model-text">{{ __('front.popup.hours') }}</div>
             <div class="working-wrap">
-              @include('components.select', ['label' => '-დან', 'name' => 'from', 'options' => $options])
-              @include('components.select', ['label' => '-მდე', 'name' => 'to', 'options' => $options])
+              @include('components.select', ['label' => __('front.popup.from'), 'name' => 'from', 'options' => $options])
+              @include('components.select', ['label' => __('front.popup.to'), 'name' => 'to', 'options' => $options])
             </div>
             <button class="we-btn we-arr-right submit-working">
-              <span>გაგრძელება</span>
+              <span>@lang('front.continue')</span>
               <i class="fas fa-arrow-right"></i>
             </button>
         </div>

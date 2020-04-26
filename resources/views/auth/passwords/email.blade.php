@@ -1,18 +1,22 @@
 @extends('layouts.front', ['template' => 'auth'])
 
+@php
+    $lang = app()->getLocale();
+@endphp
+
 @section('content')
 <div class="we-block">
-    <h1>პაროლის აღდგენა</h1>
-    <form method="POST" action="{{ route('password.email') }}">
+    <h1>@lang('front.auth.reset')</h1>
+    <form method="POST" action="{{ route('password.email', $lang) }}">
     @csrf
         @include('components.input', [
             'name' => 'email',
             'type' => 'email',
-            'label' => 'ელ.ფოსტა',
+            'label' => __('front.label.email'),
         ])
         <div class="auth-footer end">
             <button type="submit" class="we-btn we-arr-right">
-                <span>გაგზავნა</span>
+                <span>@lang('front.send')</span>
                 <i class="fas fa-arrow-right"></i>
             </button>
         </div>

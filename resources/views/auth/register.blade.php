@@ -2,17 +2,24 @@
 
 @php
     $role = request()->get('role', 'company');
+    $lang = app()->getLocale();
 @endphp
 
 @section('content')
 <div class="we-block register">
     <div class="col-12"></div>
-    <h1>რეგისტრაცია</h1>
+    <h1>@lang('front.auth.register')</h1>
     <div class="head-nav">
-        <a href="{{ route('register', ['role' => 'company']) }}" class="{{ $role == 'company' ? 'active' : '' }}">იურიდიული პირებისთვის</a>
-        <a href="{{ route('register', ['role' => 'freelance']) }}" class="{{ $role == 'freelance' ? 'active' : '' }}">ფიზიკური პირებისთვის</a>
+        <a href="{{ route('register', [$lang, 'role' => 'company']) }}" class="{{ $role == 'company' ? 'active' : '' }}">
+            <span class="d-inline d-lg-none">@lang('front.auth.com.short')</span>
+            <span class="d-none d-lg-inline">@lang('front.auth.com.long')</span>
+        </a>
+        <a href="{{ route('register', [$lang, 'role' => 'freelance']) }}" class="{{ $role == 'freelance' ? 'active' : '' }}">
+            <span class="d-inline d-lg-none">@lang('front.auth.phy.short')</span>
+            <span class="d-none d-lg-inline">@lang('front.auth.phy.long')</span>
+        </a>
     </div>
-    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('register', $lang) }}" enctype="multipart/form-data">
     @csrf
         <input type="hidden" name="role" value="{{ $role }}">
 
@@ -20,80 +27,80 @@
             @include('components.input', [
                 'name' => 'company_name',
                 'type' => 'text',
-                'label' => 'კომპანიის დასხელება',
+                'label' => __('front.label.company_name'),
             ])
             @include('components.input', [
                 'name' => 'identity',
                 'type' => 'number',
-                'label' => 'საიდენტიფიკაციო კოდი',
+                'label' => __('front.label.identity'),
             ])
             @include('components.input', [
                 'name' => 'employes',
                 'type' => 'number',
-                'label' => 'თანამშრომლების რაოდენობა',
+                'label' => __('front.label.employes'),
             ])
         @endif
         @if ($role == 'freelance')
             @include('components.input', [
                 'name' => 'firstname',
                 'type' => 'text',
-                'label' => 'სახელი',
+                'label' => __('front.label.fisrtname'),
             ])
             @include('components.input', [
                 'name' => 'lastname',
                 'type' => 'text',
-                'label' => 'გვარი',
+                'label' => __('front.label.lastname'),
             ])
         @endif
         @include('components.input', [
             'name' => 'email',
             'type' => 'email',
-            'label' => 'ელ.ფოსტა',
+            'label' => __('front.label.email'),
         ])
         @include('components.input', [
             'name' => 'phone',
             'type' => 'number',
-            'label' => 'საკონტაქტო ნომერი',
+            'label' => __('front.label.contanct_number'),
         ])
         @if ($role == 'company')
             @include('components.working', [
                 'name' => 'working_hours',
                 'type' => 'text',
-                'label' => 'მისაღები სამუშაო საათები',
+                'label' => __('front.label.hours'),
             ])
         @endif
         @include('components.input', [
             'name' => 'password',
             'type' => 'password',
-            'label' => 'პაროლი',
+            'label' => __('front.label.password'),
         ])
         @include('components.input', [
             'name' => 'password_confirmation',
             'type' => 'password',
-            'label' => 'გაიმეორე პაროლი',
+            'label' => __('front.label.password_confirm'),
         ])
         @if ($role == 'freelance')
             @include('components.working', [
                 'name' => 'working_hours',
                 'type' => 'text',
-                'label' => 'მისაღები სამუშაო საათები',
+                'label' => __('front.label.hours'),
             ])
         @endif
         @include('components.input', [
             'name' => 'message',
             'type' => 'text',
-            'label' => 'აღწერე როგორ დაგვეხმარები...',
+            'label' => __('front.label.problem'),
         ])
         @include('components.file', [
             'name' => $role == 'freelance' ? 'cv' : 'image',
-            'label' => $role == 'freelance' ? 'ატვირთე შენი CV' : 'ატვირთე კომპანიის ლოგო',
+            'label' => $role == 'freelance' ? __('front.label.cv') : __('front.label.logo'),
         ])
         <div class="terms">
             <label>
                 <input type="checkbox" name="terms">
                 <span class="checkbox"></span>
                 <span>
-                    ვეთანხმები რეგისტრაციის <a target="_blank" href="{{ route('terms') }}">პირობებს</a>
+                    @lang('front.label.accempt') <a target="_blank" href="{{ route('terms', $lang) }}">@lang('front.label.terms')</a>
                 </span>
             </label>
             @error('terms')
@@ -101,9 +108,9 @@
             @enderror
         </div>
         <div class="auth-footer">
-            <a href="{{ route('login') }}">ავტორიზაცია</a>
+            <a href="{{ route('login', $lang) }}">@lang('front.auth.login')</a>
             <button type="submit" class="we-btn we-arr-right">
-                <span>რეგისტრაცია</span>
+                <span>@lang('front.auth.register')</span>
                 <i class="fas fa-arrow-right"></i>
             </button>
         </div>

@@ -83,6 +83,35 @@
             }
         }
     }
+
+    @include md {
+
+        .modal-content {
+            border-radius: 10px;
+    
+            .modal-block {
+    
+                h3 {
+                    font-size: 14px;
+                }
+    
+                p {
+                    font-size: 14px;
+                }
+            }
+    
+            .modal-company {
+
+                & > span {
+                    font-size: 14px;
+                }
+    
+                figure {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 #ticket {
@@ -110,6 +139,7 @@
             justify-content: space-between;
 
             button {
+                opacity: 1;
                 border-radius: 50%;
                 background-color: #EFF2F6;
                 width: 30px;
@@ -162,5 +192,27 @@
         .we-input {
             width: 49%;
         }
+    }
+
+    @include md {
+
+        .modal-content {
+            padding: 0;
+        }
+
+        .modal-body {
+
+            h3 {
+                text-align: left !important;
+            }
+        }
+
+        
+    .ticket-form {
+        
+        .we-input {
+            width: 100%;
+        }
+    }
     }
 } 

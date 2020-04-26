@@ -137,6 +137,41 @@
     .select-bigger {
         width: 300px;
     }
+
+    .info-alert {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        background: #323232;
+        padding: 10px 15px;
+        border-radius: 5px;
+        color: white;
+        left: 50%;
+        z-index: 20;
+        align-items: center;
+        box-shadow: 0 0px 16px 0px rgba(50, 50, 50, 0.5);
+        transform: translateX(-50%);
+
+        span {
+            font-family: $mainFontCaps;
+            margin-top: 3px;
+            font-size: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            color: white;
+            border: none;
+            outline: none;
+            margin-left: 30px;
+            opacity: 1;
+            border-radius: 10px;
+            background: #3d3d3d;
+            width: 40px;
+            height: 40px;
+            font-size: 17px;
+        }
+    }
 }
 
 .success {

@@ -3,28 +3,30 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+Route::redirect('/', app()->getLocale() . '/');
+Route::prefix('{locale}')->middleware('locale')->group(function () {    
+    Auth::routes();
+    Route::get('/', 'FrontController@home')->name('front.home');
+    Route::get('/terms', 'FrontController@home')->name('terms');
+});
 
-Route::get('/', 'FrontController@home')->name('front.home');
-
-Route::get('/terms', 'FrontController@home')->name('terms');
-
-Route::resource('application', 'ApplicationController')->only(['store']);
-
-Route::middleware(['auth'])->group(function () {
+Route::prefix('admin')->resource('application', 'ApplicationController')->only(['store']);
+Route::prefix('admin')->middleware(['auth'])->group(function () {
     
     Route::middleware(['admin'])->group(function () {
         Route::resource('user', 'UserController')->except(['create', 'store', 'show']);
+        Route::post('user/status/{user}', 'UserController@setStatus')->name('user.status');
+
         Route::resource('category', 'CategoryController')->except(['show']);
         Route::resource('solved', 'SolvedController')->only(['index', 'edit', 'update']);
 
         // Application
-        Route::post('application/priority/{application}', 'ApplicationController@setPriority')->name('aplication.priority');
-        Route::post('application/category/{application}', 'ApplicationController@setCategory')->name('aplication.category');
-        Route::post('application/partner/{application}', 'ApplicationController@setPartner')->name('aplication.partner');
+        Route::post('application/priority/{application}', 'ApplicationController@setPriority')->name('application.priority');
+        Route::post('application/category/{application}', 'ApplicationController@setCategory')->name('application.category');
+        Route::post('application/partner/{application}', 'ApplicationController@setPartner')->name('application.partner');
     });
 
     // Application
     Route::resource('application', 'ApplicationController')->except(['create', 'store', 'show']);
-    Route::post('application/status/{application}', 'ApplicationController@setStatus')->name('aplication.status');
+    Route::post('application/status/{application}', 'ApplicationController@setStatus')->name('application.status');
 });
