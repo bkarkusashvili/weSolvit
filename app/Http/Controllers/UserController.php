@@ -17,7 +17,7 @@ class UserController extends Controller
         $status = $request->get('status', 0);
         $role = $request->get('role', '');
 
-        $list = User::orderBy('id', 'desc')->
+        $list = User::where('role', '!=', 'admin')->orderBy('id', 'desc')->
             when($status, function ($query, $status) {
                 return $query->where('status', $status);
             })->

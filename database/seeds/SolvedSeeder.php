@@ -2,7 +2,6 @@
 
 use App\Solved;
 use App\User;
-use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 
 class SolvedSeeder extends Seeder
@@ -12,43 +11,38 @@ class SolvedSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        $users = User::where([
-            ['role', 'company'],
-            ['status', '2']
-        ])->inRandomOrder()->limit(4)->get();
-
         Solved::create([
-            'text_ka' => $faker->text(500),
-            'text_en' => $faker->text(500),
-            'comment_ka' => $faker->text(500),
-            'comment_en' => $faker->text(500),
-            'user_id' => $users[0]->id,
+            'text_ka' => '',
+            'text_en' => '',
+            'comment_ka' => '',
+            'comment_en' => '',
+            'user_id' => null,
         ]);
         
         Solved::create([
-            'text_ka' => $faker->text(500),
-            'text_en' => $faker->text(500),
-            'comment_ka' => $faker->text(500),
-            'comment_en' => $faker->text(500),
-            'user_id' => $users[1]->id,
+            'text_ka' => '',
+            'text_en' => '',
+            'comment_ka' => '',
+            'comment_en' => '',
+            'user_id' => null,
         ]);
         
         Solved::create([
-            'text_ka' => $faker->text(500),
-            'text_en' => $faker->text(500),
-            'comment_ka' => $faker->text(500),
-            'comment_en' => $faker->text(500),
-            'user_id' => $users[2]->id,
+            'text_ka' => '',
+            'text_en' => '',
+            'comment_ka' => '',
+            'comment_en' => '',
+            'user_id' => null,
         ]);
 
         Solved::create([
-            'text_ka' => $faker->text(500),
-            'text_en' => $faker->text(500),
-            'comment_ka' => $faker->text(500),
-            'comment_en' => $faker->text(500),
-            'user_id' => $users[3]->id,
+            'text_ka' => '',
+            'text_en' => '',
+            'comment_ka' => '',
+            'comment_en' => '',
+            'user_id' => null,
         ]);
     }
 }
