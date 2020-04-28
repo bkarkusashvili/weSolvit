@@ -96,6 +96,7 @@
             @lang('front.stat.solved.long')
         </div>
     </section>
+    @if (env('SOLVED_PROBLEMS'))
     <section class="front-solved container-fluid">
         <div class="container">
             <div class="front-solved-header">
@@ -125,6 +126,7 @@
             </div>
         </div>
     </section>
+    @endif
     <section class="front-faq container-fluid" id="faqs">
         <div class="container">
             <div class="row list">

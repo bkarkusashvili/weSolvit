@@ -20,6 +20,6 @@ class Solved extends Model
 
     public function getCommentAttribute()
     {
-        return $this['comment'. app()->getLocale()];
+        return $this['comment_'. app()->getLocale()];
     }
 }
