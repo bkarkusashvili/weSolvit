@@ -17,7 +17,7 @@
             @if ($isAdmin)
             <div class="form-group col-2 pr-1">
                 <label>პარტნიორი</label>
-                <select name="partner" class="filter-select-search">
+                <select name="partner" class="filter-select-search" style=" width: 100%;">
                     <option value="0">ყვველა</option>
                     <optgroup label="კომპანიები">
                         @foreach ($companies as $partner)
@@ -34,7 +34,7 @@
             @endif
             <div class="form-group col-2 px-1">
                 <label>სტატუსი</label>
-                <select name="status" class="filter-select">
+                <select name="status" class="filter-select" style=" width: 100%;">
                     <option value="0">ყველა</option>
                     @foreach (App\Application::getStatus() as $key => $st)
                         <option value="{{$key}}" {{request()->get('status') == $key ? 'selected' : ''}}>
@@ -45,7 +45,7 @@
             </div>
             <div class="form-group col-2 px-1">
                 <label>პრიორიტეტი</label>
-                <select name="priority" class="filter-select">
+                <select name="priority" class="filter-select" style=" width: 100%;">
                     <option value="">ყველა</option>
                     @foreach (App\Application::getPriority() as $key => $i)
                         <option value="{{$key}}" {{request()->get('priority') == $key ? 'selected' : ''}}>
@@ -57,7 +57,7 @@
             @if ($isAdmin)
             <div class="form-group col-2 px-1">
                 <label>კატეგორია</label>
-                <select name="category" class="filter-select-search">
+                <select name="category" class="filter-select-search" style=" width: 100%;">
                     <option value="">ყველა</option>
                     @foreach ($categories as $category)
                         <option value="{{$category->id}}" {{request()->get('category') == $category->id ? 'selected' : ''}}>

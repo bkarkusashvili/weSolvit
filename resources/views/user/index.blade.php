@@ -15,7 +15,7 @@
         <div class="row">
             <div class="form-group col-2 pr-1">
                 <label>სტატუსი</label>
-                <select name="status" class="filter-select">
+                <select name="status" class="filter-select" style=" width: 100%;">
                     <option value="0">ყველა</option>
                     @foreach (App\User::getStatus() as $key => $st)
                         <option value="{{$key}}" {{request()->get('status') == $key ? 'selected' : ''}}>
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group col-2 px-1">
                 <label>როლი</label>
-                <select name="role" class="filter-select">
+                <select name="role" class="filter-select" style=" width: 100%;">
                     <option value="">ყველა</option>
                     @foreach (App\User::getUserRoles() as $role)
                         <option value="{{$role}}" {{request()->get('role') == $role ? 'selected' : ''}}>
