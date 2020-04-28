@@ -42,6 +42,7 @@ class ApplicationCreate extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->subject(Lang::get('email.welcomeSubject'))
                     ->line(Lang::get('email.welcome'));
     }
 

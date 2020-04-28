@@ -69,7 +69,9 @@ class ApplicationController extends Controller
         $application = Application::create($data);
         $application->notify(new ApplicationCreate());
 
-        return redirect()->back()->with('status', 'success');
+        session()->flash('send', true);
+
+        return redirect()->back();
     }
 
     /**

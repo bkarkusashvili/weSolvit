@@ -48,9 +48,9 @@ class SolvedController extends Controller
     public function update(Request $request, Solved $solved)
     {
         $data = $request->validate([
-            'text_ge' => 'required|string',
+            'text_ka' => 'required|string',
             'text_en' => 'required|string',
-            'comment_ge' => 'required|string',
+            'comment_ka' => 'required|string',
             'comment_en' => 'required|string',
             'user_id' => 'required|exists:users,id', 
         ]);

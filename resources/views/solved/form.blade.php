@@ -20,8 +20,8 @@
     <div class="form-body form-block">
         <div class="form-group col-12">
             <label>პრობლემის აღწერა (GEO)</label>
-            <textarea name="text_ge" class="form-control @error('text_ge') invalid @enderror">{{ old('text_ge') ?? $item->text_ge }}</textarea>
-            @error('text_ge')
+            <textarea name="text_ka" class="form-control @error('text_ka') invalid @enderror">{{ old('text_ka') ?? $item->text_ka }}</textarea>
+            @error('text_ka')
             <span class="alert alert-danger">
                 <strong>{{ $message }}</strong>
             </span>
@@ -38,8 +38,8 @@
         </div>
         <div class="form-group col-12">
             <label>კომენტარი (GEO)</label>
-            <textarea name="comment_ge" class="form-control @error('comment_ge') invalid @enderror">{{ old('comment_ge') ?? $item->comment_ge }}</textarea>
-            @error('comment_ge')
+            <textarea name="comment_ka" class="form-control @error('comment_ka') invalid @enderror">{{ old('comment_ka') ?? $item->comment_ka }}</textarea>
+            @error('comment_ka')
             <span class="alert alert-danger">
                 <strong>{{ $message }}</strong>
             </span>

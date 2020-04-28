@@ -107,11 +107,11 @@
             </div>
             <div class="solved-list">
                 @foreach ($solved as $item)
-                <div class="item">
+                <div class="item" data-toggle="modal" data-target="#solved">
                     <h4>@lang('front.solved.name')</h4>
                     <p>{{Str::limit($item->text, 200)}}</p>
                     <span>@lang('front.solved.solve') <strong>{{$item->user->displayName}}</strong>@lang('front.solved.by')</span>
-                    <a class="solved-more" data-toggle="modal" data-target="#solved">
+                    <a class="solved-more">
                         @lang('front.more')
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -158,7 +158,7 @@
                 <div class="d-block d-lg-none col-12">
                     @for ($i = 0; $i < 6; $i = $i + 1)
                     <div class="item">
-                        <div class="item-head">
+                        <div class="item-head" onclick="">
                             <h4>{{ __("faq.$i.title") }}</h4>
                             <i class="fas fa-angle-down"></i>
                         </div>
@@ -172,6 +172,13 @@
 @endsection
 
 @section('modal')
+    @if(session()->has('send'))
+    @include('modals.info', [
+        'open' => true,
+        'text' => __('front.ticket.sent'),
+        'hint' => __('front.ticket.hint'),
+    ])
+    @endif
     @foreach ($solved as $item)
         @include('modals.solved', ['item' => $item])
     @endforeach

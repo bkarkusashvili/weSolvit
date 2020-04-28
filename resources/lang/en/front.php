@@ -58,7 +58,8 @@ return [
     'ticket' => [
         'title' => 'Upload the problem',
         'info' => 'Provide contact information',
-
+        'sent' => 'Your application has been successfully submitted',
+        'hint' => 'We will contact you soon',
     ],
 
     'auth' => [

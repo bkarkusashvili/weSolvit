@@ -40,3 +40,7 @@
 .caps {
     font-family: $mainFontCaps;
 }
+
+html, body {
+    min-height: 100%;
+}
