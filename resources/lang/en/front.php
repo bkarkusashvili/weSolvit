@@ -10,14 +10,14 @@ return [
         'it' => 'We can solve IT problems together',
         'text' => 'We support organizations and companies operating in the country. If you need advice on remote operations, information technology, or security:',
         'list' => [
-            'Write to us about your problem',
+            'Write us a issue you want to solve',
             'Provide contact information',
             'We will get back to you within a day',
         ],
     ],
 
     'application' => [
-        'problem' => 'Describe your problem',
+        'problem' => 'Write us to help you',
         'placeholder' => 'Description of the problem...',
         'hint' => 'Maximum 1000 characters',
     ],

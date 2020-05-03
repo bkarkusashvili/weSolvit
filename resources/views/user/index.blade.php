@@ -75,7 +75,8 @@
                     <a class="left" href="{{ route($page.'.edit', $item->id) }}">
                         <i class="far fa-edit"></i>
                     </a>
-                    <form action="{{ route($page.'.destroy', $item->id) }}">
+                    <form action="{{ route($page.'.destroy', $item->id) }}" method="POST">
+                        @method('DELETE')
                         @csrf
                         <button type="submit" class="right">
                             <i class="far fa-trash-alt"></i>
