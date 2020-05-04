@@ -7,7 +7,7 @@ return [
     ],
     
     'head' => [
-        'it' => 'We can solve IT problems together',
+        'it' => 'Let\'s deal with IT challenges together',
         'text' => 'We support organizations and companies operating in the country. If you need advice on remote operations, information technology, or security:',
         'list' => [
             'Write us a issue you want to solve',
