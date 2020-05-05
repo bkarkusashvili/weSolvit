@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -63,6 +64,14 @@ class UserController extends Controller
 
         if ($role === 'company') {
             $data = $this->validateCompany($request);
+            $image = $request->image;
+            if ($image) {
+                Storage::disk('public')->delete($user->image);
+
+                $folder = 'company';
+                $file = Storage::disk('public')->put($folder, $image);
+                $data['image'] = $file;
+            }
         } elseif ($role === 'freelance') {
             $data = $this->validateFreelance($request);
         } else {
@@ -111,7 +120,8 @@ class UserController extends Controller
             'working_hours' => 'sometimes|regex:/^[0-9]{2}:00 - [0-9]{2}:00$/',
             'message' => 'sometimes|string|nullable',
             'phone' => 'required|regex:/^(?:\?995)?5(?:[0-9]\s*){8}$/',
-            'email' => 'required|string|email|max:255|unique:users',
+            // 'email' => 'required|string|email|max:255|unique:users',
+            'image' => 'nullable|image|max:2048',
         ]);
     }
     
@@ -121,7 +131,7 @@ class UserController extends Controller
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'working_hours' => 'sometimes|regex:/^[0-9]{2}:00 - [0-9]{2}:00$/',
-            'email' => 'required|string|email|max:255|unique:users',
+            // 'email' => 'required|string|email|max:255|unique:users',
             'message' => 'sometimes|string|nullable',
             'phone' => 'required|regex:/^(?:\?995)?5(?:[0-9]\s*){8}$/',
         ]);

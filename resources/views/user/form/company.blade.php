@@ -17,7 +17,7 @@
 <form class="form-content" action="{{ $action }}" method="POST" enctype="multipart/form-data">
     @method($method)
     @csrf
-    <input type="hidden" value="{{$item->role}}">
+    <input type="hidden" name="role" value="{{$item->role}}">
     <div class="form-body form-block">
         <div class="row">
             <div class="form-group col-6">
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group col-6">
                 <label>მეილი</label>
-                <input type="email" name="email" class="form-control @error('email') invalid @enderror" value="{{ old('email') ?? $item->email }}">
+                <input type="email" disabled name="email" class="form-control @error('email') invalid @enderror" value="{{ old('email') ?? $item->email }}">
                 @error('email')
                 <span class="alert alert-danger">
                     <strong>{{ $message }}</strong>
@@ -97,8 +97,17 @@
                 {!! $item->status_html !!}
             </div>
             <div class="form-group d-info">
-                <label>ლოგო</label>
+                <label for="logo">
+                    <span>ლოგო</span>
+                    <i class="fas fa-upload ml-2 text-danger"></i>
+                    <input id="logo" type="file" name="image" class="d-none" />
+                </label>
                 <img class="logo" src="{{url($item->logo)}}">
+                @error('image')
+                <span class="alert alert-danger mb-2">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
         </div>
     </div>
