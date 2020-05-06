@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
@@ -95,6 +96,24 @@ class UserController extends Controller
             return redirect()->back()->withErrors('ადმინის წაშლა შეუძლებელია');
         }
         $user->delete();
+
+        return redirect()->back();
+    }
+
+    public function passwordForm()
+    {
+        return view('user.form.password');
+    }
+
+    public function passwordChange(Request $request)
+    {
+        $user = auth()->user();
+        $request->validate(['password' => 'required|string|min:8|confirmed']);
+
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        session()->flash('status', true);
 
         return redirect()->back();
     }

@@ -29,4 +29,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     // Application
     Route::resource('application', 'ApplicationController')->except(['create', 'store', 'show']);
     Route::post('application/status/{application}', 'ApplicationController@setStatus')->name('application.status');
+
+    Route::get('password', 'UserController@passwordForm')->name('password.change');
+    Route::post('password', 'UserController@passwordChange');
 });

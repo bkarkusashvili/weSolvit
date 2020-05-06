@@ -47,6 +47,12 @@
                         </a>
                     </li>
                     @endif
+                    <li class="{{ request()->is('admin/password*') ? 'active' : '' }}">
+                        <a href="{{ route('password.change') }}">
+                            <i class="fas fa-key"></i>
+                            <span>პაროლი</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </aside>
@@ -68,4 +74,5 @@
             </button>
         </div>
     </div>
+    @yield('modal')
 @endsection

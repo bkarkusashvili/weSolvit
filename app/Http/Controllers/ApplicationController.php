@@ -71,7 +71,7 @@ class ApplicationController extends Controller
 
         session()->flash('send', true);
 
-        return redirect()->back();
+        return redirect()->route('front.home', [app()->getLocale(), 'ref' => 'thankyou']);
     }
 
     /**
