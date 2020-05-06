@@ -102,7 +102,7 @@ class ApplicationPolicy
             return false;
         }
 
-        if ($application->isClose()) {
+        if ($application->isClosed()) {
             return false;
         }
 
