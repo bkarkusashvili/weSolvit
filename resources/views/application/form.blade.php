@@ -48,7 +48,7 @@
                 </span>
                 @enderror
             </div>
-            <div class="form-group col-6">
+            {{-- <div class="form-group col-6">
                 <label>საიდენთიფიკაციო</label>
                 <input type="text" name="identity" class="form-control @error('identity') invalid @enderror" value="{{ old('identity') ?? $item->identity }}" {{$disabled ? 'disabled':''}}>
                 @error('identity')
@@ -56,7 +56,7 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
-            </div>
+            </div> --}}
             <div class="form-group col-6">
                 <label>მეილი</label>
                 <input type="email" name="email" class="form-control @error('email') invalid @enderror" value="{{ old('email') ?? $item->email }}" {{$disabled ? 'disabled':''}}>
@@ -75,7 +75,7 @@
                 </span>
                 @enderror
             </div>
-            <div class="form-group col-6">
+            {{-- <div class="form-group col-6">
                 <label>თანამშრომლების რაოდენობა</label>
                 <input type="text" name="employes" class="form-control @error('employes') invalid @enderror" value="{{ old('employes') ?? $item->employes }}" {{$disabled ? 'disabled':''}}>
                 @error('employes')
@@ -83,7 +83,7 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
-            </div>
+            </div> --}}
             <div class="form-group col-6">
                 <label>სფერო</label>
                 <input type="text" name="type" class="form-control @error('type') invalid @enderror" value="{{ old('type') ?? $item->type }}" {{$disabled ? 'disabled':''}}>

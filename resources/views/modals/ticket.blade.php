@@ -21,18 +21,20 @@
                             'name' => 'firstname',
                             'type' => 'text',
                             'label' => __('front.label.fisrtname'),
+                            'required' => true,
                         ])
                         @include('components.input', [
                             'name' => 'lastname',
                             'type' => 'text',
                             'label' => __('front.label.lastname'),
+                            'required' => true,
                         ])
                         @include('components.input', [
                             'name' => 'company',
                             'type' => 'text',
                             'label' => __('front.label.company'),
                         ])
-                        @include('components.input', [
+                        {{-- @include('components.input', [
                             'name' => 'identity',
                             'type' => 'number',
                             'label' => __('front.label.identity'),
@@ -41,7 +43,7 @@
                             'name' => 'employes',
                             'type' => 'number',
                             'label' => __('front.label.employes'),
-                        ])
+                        ]) --}}
                         @include('components.input', [
                             'name' => 'email',
                             'type' => 'email',
@@ -51,6 +53,7 @@
                             'name' => 'phone',
                             'type' => 'number',
                             'label' => __('front.label.phone'),
+                            'required' => true,
                         ])
                         @include('components.input', [
                             'name' => 'type',

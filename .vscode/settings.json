@@ -1,0 +1,24 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "${workspaceFolder}\\database/database.sqlite",
+            "dialect": "SQLite",
+            "name": "Reklamebi"
+        },
+        {
+            "database": "${workspaceFolder}\\database/database.sqlite",
+            "dialect": "SQLite",
+            "name": "GoodTrips"
+        },
+        {
+            "database": "${workspaceFolder}\\database/database.sqlite",
+            "dialect": "SQLite",
+            "name": "GoodTrips"
+        },
+        {
+            "database": "${workspaceFolder}\\database/database.sqlite",
+            "dialect": "SQLite",
+            "name": "WESOLVIT"
+        }
+    ]
+}

@@ -67,7 +67,10 @@ class ApplicationController extends Controller
         $data = $this->validateRequest($request);
         
         $application = Application::create($data);
-        $application->notify(new ApplicationCreate());
+
+        if ($application->email) {
+            $application->notify(new ApplicationCreate());
+        }
 
         session()->flash('send', true);
 
@@ -186,12 +189,12 @@ class ApplicationController extends Controller
         return $request->validate([
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
-            'company' => 'required|string|max:255',
-            'identity' => 'required|integer',
-            'employes' => 'required|integer|min:0',
-            'email' => 'required|string|email|max:255',
+            'company' => 'nullable|string|max:255',
+            // 'identity' => 'required|integer',
+            // 'employes' => 'required|integer|min:0',
+            'email' => 'nullable|string|email|max:255',
             'phone' => 'required|regex:/^(?:\?995)?5(?:[0-9]\s*){8}$/',
-            'type' => 'required|string|max:255',
+            'type' => 'nullable|string|max:255',
             'message' => 'required|string',
         ]);
     }

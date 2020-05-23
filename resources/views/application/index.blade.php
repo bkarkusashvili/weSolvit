@@ -80,7 +80,7 @@
     <thead>
         <tr>
             @if ($isAdmin)
-            <th>მეილი</th>
+            <th>მობილური</th>
             <th>კატეგორია</th>
             <th>კომპანია</th>
             @endif
@@ -93,7 +93,7 @@
         @foreach ($list as $item)
             <tr>
                 @if ($isAdmin)
-                <td>{{$item->email}}</td>
+                <td>{{$item->phone}}</td>
                 <td>
                     <select class="filter-select-search" name="category_id" data-action="{{ route($page.'.category', $item->id) }}">
                         <option value="">ცარიელი</option>
